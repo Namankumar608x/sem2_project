@@ -50,6 +50,10 @@ p.register:hover, a.sign_in:hover {
     object-fit: cover;
 }
 
+body {
+    padding-top: 10vh;
+}
+
 header {
   position: fixed;
   left: 0;
@@ -130,17 +134,71 @@ header {
         padding: 5px;
     }
 }
-.card-container1{
+/*this is made for card at top first block */
+.card-container{
     display: flex;
     justify-content: space-evenly;
     margin-top:3rem ;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
+    gap: 20px;
 }
-.card_container2{
-    display: flex;
-justify-content: space-evenly;
+.card {
+    width: 18rem; 
+    border: 2rem solid #000000;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
+.card:hover {
+    transform:scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+   height:70%;
+    object-fit: cover;
+margin-bottom: auto;}
+
+    .card-title {
+   font-size: 16px;
+        margin: 10px 0;
+    }
+
+.card-body{
+background-color:rgb(238, 238, 238);
+
+}
+.card-date{
+    margin-top: 2rem;
+    font-weight: 100;
+}
+
+
+.featured-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:5rem;
+    padding: 20px;
+}
+
+.featured-card-container .card {
+    width: 40rem; 
+}
+
+.featured-2-card-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    margin-top:1.5rem ;
+    margin-bottom:1.5rem ;
+}
+.featured-2-card-container.card{
+ width: 20rem;;
+}
+/*all sort*/
 .card-scroll-container {
     display: flex;
     overflow-x: auto; 
@@ -170,12 +228,7 @@ justify-content: space-evenly;
     width: 18rem;
 }
 
-hr {
-    margin: auto;
-    border: none  !important;
-    background-color: black !important;
-    height: .35rem ;
-}
+
 .container_textdiv{
     display: flex;
     justify-content: space-evenly;
@@ -206,9 +259,104 @@ hr {
     height: 100%; 
     object-fit: cover; /* Ensures image fits well */
   }
+  .moreNewsContainer {
   
-  .card-body {
-    padding: 5px; /* Reduces space */
-    font-size: 14px; /* Makes text smaller */
-  }
-  
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.news-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+li {
+    
+    margin-bottom: 10px;
+}
+li a {
+    font-size: larger;
+    font-weight: 500;
+    color: black; /* Change text color to black */
+    text-decoration: none; /* Remove underline */
+}
+
+li a:hover {
+    color: rgb(215, 18, 18); 
+    font-weight: 700;
+    text-decoration: underline;}
+
+
+footer {
+    background-color: #062130;
+           color: #ffffff;
+           padding: 40px 0;
+           font-family: Arial, sans-serif;
+       }
+       
+       .footer-container {
+           display: flex;
+           justify-content: space-between;
+           flex-wrap: wrap;
+           max-width: 1100px;
+          margin: 0 auto;
+           padding: 20px;
+       }
+       
+       .footer-section {
+           width: 22%;
+           margin-bottom: 20px;
+       }
+       
+       .footer-section h2 {
+           font-size: 18px;
+           margin-bottom: 15px;
+           border-bottom: 2px solid #0bbce8;
+           display: inline-block;
+           padding-bottom: 5px;
+       }
+       
+       .footer-section p {
+           font-size: 14px;
+           color: #cccccc;
+       }
+       
+       .footer-section ul {
+           list-style: none;
+           padding: 0;
+       }
+       
+       .footer-section ul li {
+           margin-bottom: 10px;
+       }
+       
+       .footer-section ul li a {
+           color: #8eeaf0;
+           text-decoration: none;
+           transition: 0.3s;
+       }
+       
+       .footer-section ul li a:hover {
+           color: #ffffff;
+       }
+       
+       .footer-section a {
+           color: #8eeaf0;
+           margin-right: 10px;
+           font-size: 20px;
+           transition: 0.3s;
+       }
+       
+       .footer-section a:hover {
+           color: #ffffff;
+       }
+       
+       .footer-bottom {
+           text-align: center;
+           padding-top: 15px;
+           font-size: 14px;
+           background-color: #04151f;
+       }
+       
