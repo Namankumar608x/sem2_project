@@ -215,4 +215,94 @@ newsData.forEach((news, i) => {
     columns[i % 4].innerHTML += `<li><a href="${news.link}">${news.title}</a></li>`;
 });
 
-
+// ⚡ Fetch news and populate cards
+async function fetchNews(category) {
+    try {
+      // 🔗 Backend API URL
+      const response = await fetch(`http://localhost:8080/api/v1/news/${category}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${category} news`);
+      }
+  
+      // 📚 Parse JSON response
+      const data = await response.json();
+  
+      // 🎯 Get card container dynamically based on category
+      const container = document.getElementById(`${category}-news-container`);
+  
+      // 🔥 Clear previous content
+      container.innerHTML = "";
+  
+      // 📢 Check if data is available
+      if (data.length === 0) {
+        container.innerHTML = `<p>No ${category} news available.</p>`;
+        return;
+      }
+  
+      // 📝 Generate cards for each news item
+      data.forEach((item) => {
+        const card = `
+          <div class="card">
+            <h3>${item.title}</h3>
+            <p>${item.content}</p>
+            <small>🕒 ${new Date(item.date).toLocaleDateString()}</small>
+          </div>
+        `;
+        container.innerHTML += card;
+      });
+    } catch (error) {
+      console.error(`Error fetching ${category} news:`, error);
+      document.getElementById(
+        `${category}-news-container`
+      ).innerHTML = `<p>⚠️ Error loading ${category} news. Please try again later.</p>`;
+    }
+  }
+  
+  // 📡 Fetch and display all categories on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    fetchNews("sports");
+    fetchNews("finance");
+    fetchNews("technology");
+    fetchNews("world");
+  });
+  
+// Fetch and display sports news
+async function fetchSportsNews() {
+    try {
+      const response = await fetch("http://localhost:8080/api/v1/news/sports");
+      if (!response.ok) {
+        throw new Error("Failed to fetch sports news.");
+      }
+      const data = await response.json();
+      console.log(data); // For testing, logs fetched data
+      displaySportsNews(data);
+    } catch (error) {
+      console.error("Error fetching sports news:", error);
+    }
+  }
+  
+  // Function to display news in cards dynamically
+  function displaySportsNews(newsArray) {
+    const newsContainer = document.getElementById("sports-container"); // Div to display news cards
+    newsContainer.innerHTML = ""; // Clear existing data
+  
+    newsArray.forEach((news) => {
+      const newsCard = `
+        <div class="card">
+          <img src="${news.image}" class="card-img-top" alt="${news.title}">
+          <div class="card-body">
+            <h5 class="card-title">${news.title}</h5>
+            <p class="card-text">${news.content}</p>
+            <p><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
+          </div>
+        </div>
+      `;
+      newsContainer.innerHTML += newsCard;
+    });
+  }
+  
+  // Fetch sports news when page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    fetchSportsNews();
+  });
+  

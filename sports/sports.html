@@ -1,356 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>National Herald - Sports</title>
-    <link rel="stylesheet" href="sports.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports News - National Herald</title>
+  <link rel="stylesheet" href="index.css"> <!-- Add CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <header class="p-3 text-bg-dark">
-            <div class="container header">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="../images/Screenshot 2025-03-24 093023.png" width="40" height="32" alt="National Herald Logo" />
-                    </a>
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="../index.html" class="nav-link px-2 text-light">Home</a></li>
-                        <li><a href="../world.html" class="nav-link px-2 text-white">World</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Politics</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Business</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Technology</a></li>
-                        <li><a href="../sports/sports.html" class="nav-link px-2 text-white">Sports</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Entertainment</a></li>
-                        <li><a href="#" class="nav-link px-2 text-white">Contact us</a></li>
-                    </ul>
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                        <input type="search" class="form-control form-control-dark text-bg-light" placeholder="Search..." aria-label="Search">
-                    </form>
-                    <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2">Login</button>
-                        <button type="button" class="btn btn-warning">Sign-up</button>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </header>
-    
-    <main>
-        
-        <div class="container">
-            <div id="carouselExampleCaptions" class="carousel slide">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="../images/ipl opening ceremony.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>IPL 2025 Opening Ceremony: SRK, Shreya, Disha Dazzle Eden Gardens</h5>
-                      
+  <header class="bg-dark text-white p-3">
+    <h1 class="text-center">🏆 Sports News</h1>
+  </header>
 
+  <div class="container my-4">
+    <!-- Container to display sports news dynamically -->
+    <div id="sports-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
+  </div>
 
+  <script>
+    // Fetch and display sports news from MongoDB
+    async function fetchSportsNews() {
+      try {
+        const response = await fetch("http://localhost:8080/api/v1/news/sports");
+        if (!response.ok) {
+          throw new Error("Failed to fetch sports news.");
+        }
+        const data = await response.json();
+        displaySportsNews(data);
+      } catch (error) {
+        console.error("Error fetching sports news:", error);
+      }
+    }
 
+    // Function to dynamically display news in Bootstrap cards
+    function displaySportsNews(newsArray) {
+      const newsContainer = document.getElementById("sports-container");
+      newsContainer.innerHTML = ""; // Clear existing content
 
-
-
-
-
-                      </p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://th-i.thgim.com/public/incoming/ng035w/article69376084.ece/alternates/LANDSCAPE_1200/Argentina_Brazil_Wcup_Soccer_03515.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>2026 World Cup qualifiers: Argentina secures WC spot and then defeats Brazil 4-1</h5>
-                      <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://th-i.thgim.com/public/incoming/t2ky7z/article69374933.ece/alternates/LANDSCAPE_1200/Sunil%20Kumar%20wrestler.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>
-                        Indian wrestler Sunil Kumar won the bronze medal in the 87kg Greco Roman bout of the Asian Championship in Jordan on Tuesday</h5>
-                      
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            </div>
-      
-        <div class="maincontainer">
-            <div class="card1 card" style="width:40%;">
-                <img src="https://th-i.thgim.com/public/incoming/w09c0j/article69374803.ece/alternates/LANDSCAPE_1200/VIS_5834.JPG" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">
-                      Smriti Mandhana, Deepti Sharma retain their spots in ICC rankings</h5>
-                    <p class="card-text">ti Mandhana. File | Photo Credit: Vijay Soneji
-
-                      India vice-captain Smriti Mandhana and all-rounder Deepti Sharma held on to their third positions respectively in the latest ICC Women's T20I batter and bowlers' rankings issued here on Tuesday</p>
-                    
-                </div>
-            </div>
-            <div id="card2" class="card" style="width: 26rem;">
-                <img src="https://th-i.thgim.com/public/incoming/4zcwgo/article69370626.ece/alternates/LANDSCAPE_1200/AFP__20250324__37M47MJ__v2__HighRes__TopshotFblWc2026QualifierNzlNcl.jpg" class="card-img-top" alt="..." style="height:250px">
-                <div class="card-body">
-                    <h5 class="card-title">New Zealand qualifies for 2026 FIFA World Cup</h5>
-                    <p class="card-text">New Zealand will play at the 2026 World Cup after beating New Caledonia 3-0 on Monday (March 24, 2025) in the final of the Oceania confederation qualifying series. The New Zealand “All Whites” reached the World Cup for the third time after qualifying in Spain in 1982 and South Africa in 2010.</p>
-                    
-                </div>
-            </div>
-            <div id="card3" class="card" style="width: 18rem;">
-                <img src="https://ss-i.thgim.com/public/incoming/nrk70e/article69369072.ece/alternates/LANDSCAPE_1200/957278294.jpg" class="card-img-top" alt="..." style="height:250px">
-                <div class="card-body">
-                    <h5 class="card-title">Indian sports wrap, March 24: Two-time champion SSP Chawrasia to take part in Hero Indian Open</h5>
-                    <p class="card-text">Two-time champion and four-time runner-up, SSP Chawrasia has been given a special invitation by the title sponsor for the USD 2.25 million Hero Indian Open golf championship to be played at the DLF Golf and Country Club from Thursday.</p>
-                    
-                </div>
-            </div>
-            <div id="card4" class="card" style="width: 18rem;">
-                <img src="./images/joh.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    
-                </div>
-            </div>
-            <div id="card5"class=" card" style="width:40%;">
-              <img src="./images/joh.png" class="card-img-top" alt="...">
+      newsArray.forEach((news) => {
+        const newsCard = `
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <img src="${news.image}" class="card-img-top" alt="${news.title}" />
               <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  
+                <h5 class="card-title">${news.title}</h5>
+                <p class="card-text">${news.content}</p>
+                <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
+                <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
               </div>
+            </div>
           </div>
+        `;
+        newsContainer.innerHTML += newsCard;
+      });
+    }
 
-          <div id="card6"class="card" style="width: 18rem;">
-              <img src="./images/joh.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  
-              </div>
-             </div>
-            
-             
-          <div class="cricket" style="width:100%; display: flex; justify-content: center;">
-            <h1 style="font-family: 'Arial', sans-serif; font-size: 60px; font-weight: bold; color: #3895c0; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
-              🏏Cricket
-            </h1>
-        </div>
-
-
-          <div id="card7" class="card" style="width:20rem;">
-              <img src="../images/david warner.png" class="card-img-top" alt="...">
-              <div class="David Warner">
-                  <h5 class="Warner to lead Karachi Kings in the PSL">David warner</h5>
-                  <p class="card-text">**David Warner to Lead Karachi Kings in PSL 2025**  
-                    Former Australia batter David Warner will captain Karachi Kings in the upcoming 10th edition of the Pakistan Super League (PSL) from 11 April to 18 May. Warner replaces Pakistan Test captain Shan Masood and will be making his PSL debut. The 38-year-old, who led Sydney Thunder to the 2025 Big Bash League final, expressed excitement about the role. Warner, previously banned from leadership due to a ball-tampering scandal, has played 110 T20Is for Australia, scoring 3,277 runs.</p>
-                  
-              </div>
-          </div>
-          <div id="card8" class="card" style="width: 20rem;">
-              <img src="../images/edwards.png" class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Edwards</h5>
-                  <p class="card-text">**Charlotte Edwards is the Ideal Candidate for England's Head Coach Role**  
-                    Former England batter Lydia Greenway believes Charlotte Edwards is the only candidate England should consider for the women's team head coach position. With Jon Lewis and Heather Knight removed after England's disastrous 16-0 Ashes defeat, Greenway feels Edwards' experience, having led Mumbai Indians to two WPL titles and winning multiple domestic trophies, makes her the perfect fit. Edwards, a former England captain, has also been appointed head coach of Hampshire for 2025.</p>
-                  
-              </div>
-          </div>
-          <div id="card9" class="card" style="width: 20rem;">
-              <img src="../images/srh vs rr.png" class="card-img-top" alt="..." style="height: 200px;">
-              <div class="card-body">
-                  <h5 class="card-title">IPL 2025: Ishan Kishan's Century Powers SRH to Victory Over RR </h5>
-                  <p class="card-text">Sunrisers Hyderabad showcased a dominant performance against Rajasthan Royals, winning by 44 runs in IPL 2025. Ishan Kishan’s blistering century powered SRH to a massive total, falling just one run short of the highest IPL score. Uppal Stadium, known for favoring left-handed power hitters like David Warner, Abhishek Sharma, and Travis Head, witnessed another explosive knock. Kishan’s debut for SRH added to this legacy, solidifying their reputation for aggressive batting. Rajasthan’s efforts fell short, securing SRH’s convincing victory.</p>
-                  
-              </div>
-          </div>
-          
-          <div id="card10" class="card" style="width: 20rem;">
-            <img src="../images/ashuthosh sharma .png" class="card-img-top" alt="..." style="height: 200px;">
-            <div class="card-body">
-                <h5 class="card-title">Ashutosh Sharma, Once Battling Depression After Being Dropped By IPL Coach, Now The Next 'Chasemaster'
-                </h5>
-                <p class="card-text">Sharma powered Delhi Capitals to a thrilling IPL 2025 win over Lucknow Super Giants, smashing 66 off 31 balls. Walking in at 65/5, he anchoAshutoshred the chase of 210, finishing with three balls to spare. The 26-year-old has excelled in dramatic run chases, previously shining for Punjab Kings. His rise is remarkable, overcoming depression after being brutally dropped by a former coach.</p>
-                
-            </div>
-          </div>
-          <div class="cricket" style="width:100%; display: flex; justify-content: center;">
-            <h1 style="font-family: 'Arial', sans-serif; font-size: 60px; font-weight: bold; color: #ff1e00; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
-                🏎️ F1 Racing
-            </h1>
-        </div>
-        
-
-          <div id="card11" class="card" style="width: 30rem;">
-            <img src="../images/lewis hamilton.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Hamilton Disqualified from Chinese GP for Technical Breach</h5>
-                <p class="card-text">
-
-                  Ferrari’s Lewis Hamilton has been disqualified from the Chinese Grand Prix after a post-race inspection found one of his car’s skid blocks below the required thickness. His teammate Charles Leclerc and Alpine’s Pierre Gasly were also disqualified for their cars being underweight. Hamilton, who won the sprint race on Saturday, loses his sixth-place finish. Ferrari cited miscalculations in skid wear and tyre consumption but denied any intent to gain an advantage. Hamilton faced a similar disqualification at the 2023 US Grand Prix.</p>
-                
-            </div>
-          </div>
-          <div id="card12" class="card" style="width: 30rem;">
-            <img src="../images/mclaren.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">McLaren Ready for Internal Title Fight Between Norris and Piastri</h5>
-                <p class="card-text">Lando Norris says McLaren is prepared to manage an internal fight for the world championship as he and teammate Oscar Piastri emerge as early title contenders. Piastri secured a dominant victory at the Chinese Grand Prix, giving McLaren their first one-two finish of the season and moving just 10 points behind Norris in the standings.
-
-                  McLaren's philosophy emphasizes fairness, allowing drivers to race while avoiding risks to the team. Both Norris and Piastri acknowledge their competitiveness but remain committed to mutual improvement. With McLaren’s dominance so far, the internal battle between the two could shape this season’s title race.
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  </p>
-                
-            </div>
-          </div>
-          <div id="card13" class="card" style="width: 30rem;">
-            <img src="../images/tistari.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Piastri Leads Norris to McLaren One-Two in Chinese GP</h5>
-                <p class="card-text">Oscar Piastri secured a commanding victory at the Chinese Grand Prix, leading teammate Lando Norris to a dominant McLaren one-two, with George Russell’s Mercedes finishing third. Piastri led from pole and maintained control throughout, despite Norris closing the gap to under four seconds.
-
-                  Norris, struggling with brake issues in the closing laps, managed to hold off Russell. Ferrari’s Charles Leclerc, driving with a damaged front wing, lost fourth place to Max Verstappen late in the race. However, Leclerc, Lewis Hamilton, and Pierre Gasly were disqualified post-race for technical infringements.</p>
-                
-            </div>
-          </div>
-          <div class="cricket" style="width:100%; display: flex; justify-content: center;">
-            <h1 style="font-family: 'Arial', sans-serif; font-size: 60px; font-weight: bold; color: #5551ba; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
-              ⚽ Football
-            </h1>
-        </div>
-          <div id="card14" class="card" style="width: 20rem;">
-            <img src="../images/mauricio pochettino.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Pochettino's US Compensation Makes Immediate Spurs Return Unlikely</h5>
-                <p class="card-text">Mauricio Pochettino’s recent comments about his desire to return to Tottenham have excited fans, but a comeback seems unlikely in the near future. Pochettino, now managing the US national team, faces mounting pressure after consecutive Concacaf Nations League defeats. However, with the 2026 World Cup just 15 months away, his compensation package with the US team complicates any immediate move. Despite viral photos with Tottenham chairman Daniel Levy, the financial and contractual realities make Pochettino’s return to Spurs improbable for now.</p>
-                
-            </div>
-          </div>
-          <div id="card15" class="card" style="width: 20rem;">
-            <img src="../images/Scotland football team.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Scotland’s 'Embarrassing Night' – Just a Bump in the Road?</h5>
-                <p class="card-text">Scotland’s relegation to Nations League B came after a dismal 3-1 aggregate defeat to Greece, leaving midfielder John McGinn calling it "an embarrassing night." Despite holding a 1-0 lead from the first leg, Scotland’s defense collapsed in the return match, conceding goals to Giannis Konstantelias and 17-year-old Konstantinos Karetsas, followed by a third just seconds after half-time. McGinn admitted Scotland lacked threat and Greece deserved the win. While the setback is disappointing, it may serve as a learning opportunity for Steve Clarke’s side moving forward.</p>
-                
-            </div>
-          </div>
-          <div id="card16" class="card" style="width: 20rem;">
-            <img src="../images/tuchel.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Tuchel to Make England Changes as Gibbs-White and Quansah Start Against Latvia</h5>
-                <p class="card-text">England manager Thomas Tuchel is set to make changes for the upcoming clash against Latvia, with Morgan Gibbs-White and Jarell Quansah expected to start. Meanwhile, Declan Rice has backed Harry Kane to score 100 international goals for England. Kane, who holds England's all-time scoring record with 70 goals in 104 appearances, is just 30 goals away from joining an elite club. Cristiano Ronaldo leads the international scoring charts with 136 goals, followed by Lionel Messi (112) and Ali Daei (108).</p>
-                
-            </div>
-          </div>
-          <div id="card17" class="card" style="width: 20rem;">
-            <img src="../images/jens lehmann.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Lehmann Brings 'Invincible Spirit' to Baller League</h5>
-                <p class="card-text">Former Arsenal goalkeeper Jens Lehmann is set to manage a team in the newly launched Baller League, joining fellow 'Invincibles' Freddie Ljungberg and Robert Pires. The six-a-side league, created by German entrepreneur Felix Starck, features 12 teams competing at London's Copper Box Arena every Monday. With ex-stars like Luis Figo, John Terry, and Ian Wright also managing teams, Lehmann insists that “losing is not an option.” Despite unusual rules, like goalkeepers not using their hands and long-range goals counting double, Lehmann aims to instill the winning mentality that defined his career.</p>
-                
-            </div>
-          </div>
-          <div class="cricket" style="width:100%; display: flex; justify-content: center;">
-            <h1 style="font-family: 'Arial', sans-serif; font-size: 60px; font-weight: bold; color: #75686f; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
-              🏸 Badminton
-            </h1>
-        </div>
-
-          <div id="card18" class="card" style="width: 30rem;">
-            <img src="../images/sumeeth reddy.png" class="card-img-top" alt="..." style="height: 240px;">
-            <div class="card-body">
-                <h5 class="card-title">CWG medallist shuttler Sumeeth Reddy retires</h5>
-                <p class="card-text">
-                  The 33-year-old from Hyderabad, who formed the men’s doubles pair with Manu Attri and also played mixed doubles with several shuttlers, including his wife N Sikki Reddy, made the announcement through social media on Sunday.India’s doubles specialist B Sumeeth Reddy, a member of the 2022 Commonwealth Games mixed team silver medal-winning squad, has announced his retirement as an active badminton player to focus entirely on coaching.</p>
-                
-            </div>
-          </div>
-          <div id="card19" class="card" style="width: 30rem;">
-            <img src="../images/pv sindhu.png" class="card-img-top" alt="..." style="height: 240px;">
-            <div class="card-body">
-                <h5 class="card-title">Swiss Open: PV Sindhu Fails In 1st Round, Kidambi Srikanth Moves To Pre-Quarterfinals</h5>
-                <p class="card-text">Two-time Olympic medalist PV Sindhu suffered a first-round exit at the Swiss Open, losing to world No. 31 Julie Jakobsen 21-17, 21-19. This marks her third consecutive first-round loss on the BWF World Tour in 2024. Ranked world No. 17, Sindhu had earlier reached the Indian Open quarterfinals but failed to progress past round one in the Indonesia Masters, All England Open, and now the Swiss Open.</p>
-                
-            </div>
-          </div>
-          <div id="card20" class="card" style="width: 30rem;">
-            <img src="../images/christo popov.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Swiss Open: Christo Popov Outplays Li Shi Feng</h5>
-                <p class="card-text">Christo Popov made his first final of the season beating No.6 Li Shi Feng in straight games to earn a title shot at YONEX Swiss Open 2025 against Weng Hong Yang.
-
-                  Popov hadn’t taken a game off Li in two previous meetings but was dominant for the most part against the fourth seed. Li did well to climb back from 4-13 in the first game to level at 17, but once Popov edged ahead 21-19, he was in control for the remainder of the match.</p>
-                
-            </div>
-          </div>    
-          <div class="cricket" style="width:100%; display: flex; justify-content: center;">
-            <h1 style="font-family: 'Arial', sans-serif; font-size: 60px; font-weight: bold; color: #5551ba; text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); letter-spacing: 2px;">
-              🎾 Tennis
-            </h1>
-        </div>
-          
-          <div id="card14" class="card" style="width: 20rem;">
-            <img src="../images/alex de minaur .png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Alex De Minaur Ends Joao Fonseca Challenge, Alexander Zverev Marches On In Miami Open
-                </h5>
-                <p class="card-text">Australia's Alex de Minaur ended Joao Fonseca's challenge at the Miami Open, winning 5-7, 7-5, 6-3 in a thrilling match. The Hard Rock Stadium transformed into a mini-Maracana with Brazilian flags and chants. Fonseca's ultra-attacking tennis tested De Minaur, but the Aussie handled both the powerful forehands and the partisan crowd, securing victory in a gripping contest.</p>
-                
-            </div>
-          </div>
-
-          <div id="card15" class="card" style="width: 20rem;">
-            <img src="../images/alexender zevrev.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Alexander Zverev Marches On In Miami Open, Naomi Osaka Falls
-                </h5>
-                <p class="card-text">Top seed Alexander Zverev overcame a slow start to defeat Australia's Jordan Thompson 7-5, 6-4, reaching the Miami Open fourth round. Trailing 4-1 in the first set, the German won eight of the next nine games. After an early exit at Indian Wells, Zverev sees an opportunity with Carlos Alcaraz out. "Jordan made it difficult, but I'm happy with my level from 1-4 onwards," he said.</p>
-                
-            </div>
-          </div>
-          <div id="card16" class="card" style="width: 20rem;">
-            <img src="../images/carlos alcaraz.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"> Carlos Alcaraz Stunned By Belgian Veteran David Goffin In Miami</h5>
-                <p class="card-text">World number three Carlos Alcaraz suffered a shock exit from the Miami Open, losing 5-7, 6-4, 6-3 to Belgian veteran David Goffin. Goffin, ranked 55th, capitalized on Alcaraz's struggles with unforced errors and attacked after losing the first set. The 34-year-old, who last beat Alcaraz three years ago in Astana, delivered some stunning winners, ultimately securing a memorable win at Hard Rock Stadium.</p>
-                
-            </div>
-          </div>
-          <div id="card17" class="card" style="width: 20rem;">
-            <img src="../images/yuki bhambri.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Yuki Bhambri Dethrones Rohan Bopanna As India's No. 1 Men's Doubles Player</h5>
-                <p class="card-text">Top seed Alexander Zverev overcame a slow start to defeat Australia's Jordan Thompson 7-5, 6-4, reaching the Miami Open fourth round. Trailing 4-1 in the first set, the German won eight of the next nine games. After an early exit at Indian Wells, Zverev sees an opportunity with Carlos Alcaraz out. "Jordan made it difficult, but I'm happy with my level from 1-4 onwards," he said. </p>
-                
-            </div>
-          </div>
-        </div>
-        
-    </main>
-    <footer>
-    </footer>
+    // Fetch sports news when the page loads
+    document.addEventListener("DOMContentLoaded", fetchSportsNews);
+  </script>
 </body>
 </html>
-
