@@ -12,8 +12,8 @@ function createNewsCard(title, imageUrl, link, date) {
         </div>
     `;
 
-    return card;
-}
+   document.querySelector("card-container").appendChild(card);
+};
 function distributeNews(newsArray, containerId, columnsCount = 3) {
     const container = document.getElementById(containerId);
     if (!container) {
