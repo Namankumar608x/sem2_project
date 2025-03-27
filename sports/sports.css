@@ -49,6 +49,37 @@ header {
     padding-top: 10vh;
 }
 body {
+<<<<<<< HEAD
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    transition: transform 0.2s;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+=======
 
     padding: 0;
     font-family: Arial, sans-serif;
@@ -90,3 +121,4 @@ footer {
 #card6{
     height: 360px;
 }
+>>>>>>> abe6ab082e47c7ebaefc61e93ec1354945dcec6f
