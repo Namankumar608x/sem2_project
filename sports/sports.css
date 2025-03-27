@@ -1,4 +1,55 @@
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    
+      background-color: rgb(0, 0, 0);
+      border-bottom: 1px solid rgb(28, 138, 234);
+  }
+  
+  .nav-link {
+      color: rgb(255, 255, 255);
+      transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+      color: rgb(113, 242, 254);
+      text-decoration: underline 0.15rem;
+      text-underline-offset: 0.3rem;
+      text-decoration-color: rgb(254, 255, 255);
+  }
+  
+  .btn-outline-light {
+      border-color: rgb(28, 138, 234);
+      color: rgb(28, 138, 234);
+  }
+  
+  .btn-outline-light:hover {
+      background-color: rgb(28, 138, 234);
+      color: rgb(255, 255, 255);
+  }
+  
+  .btn-warning {
+      background-color: rgb(113, 242, 254);
+      color: rgb(19, 49, 58);
+      border: none;
+  }
+  
+  .btn-warning:hover {
+      background-color: rgb(19, 49, 58);
+      color: rgb(113, 242, 254);
+  }
+  
+
+
+
+  body {
+    padding-top: 10vh;
+}
 body {
+<<<<<<< HEAD
     background-color: #f8f9fa;
   }
   
@@ -28,3 +79,46 @@ body {
     color: #555;
   }
   
+=======
+
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(193, 33, 33);
+    color: rgb(255, 255, 255);
+}
+.maincontainer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.card1 {
+    height: 450px;
+}
+.card1 img {
+    height:250px;
+    object-fit:fill;
+}
+.card {
+    height: auto;
+    flex-grow: 1;
+}
+
+
+
+footer {
+    background-color: rgb(4, 4, 4);
+    text-align: center;
+    padding: 10px 0;
+    color: rgb(145, 207, 213);
+    margin-top: 20px;
+}
+
+#card4{
+    height: 360px;
+}
+#card6{
+    height: 360px;
+}
+>>>>>>> abe6ab082e47c7ebaefc61e93ec1354945dcec6f

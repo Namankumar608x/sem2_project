@@ -1,37 +1,39 @@
-function createNewsCard(containerId, title, imageUrl, link, date) {
+function createNewsCard(title, imageUrl, link, date) {
+    let card = document.createElement("div");
+    card.classList.add("news-card");
+
+    card.innerHTML = `
+        <div class="news-card-content" onclick="window.open('${link}', '_blank')">
+            <img class="news-image" src="${imageUrl}" alt="${title}">
+            <div class="news-text">
+                <h5 class="news-title">${title}</h5>
+                <p class="news-date">${date}</p>
+            </div>
+        </div>
+    `;
+
+    return card;
+}
+function distributeNews(newsArray, containerId, columnsCount = 3) {
     const container = document.getElementById(containerId);
     if (!container) {
         console.error("Container not found:", containerId);
-        return; 
+        return;
     }
 
-    let card = document.createElement("div");
-    card.classList.add("card");
+    const columns = Array.from({ length: columnsCount }, () => {
+        let col = document.createElement("div");
+        col.classList.add("news-column");
+        container.appendChild(col);
+        return col;
+    });
 
-    let img = document.createElement("img");
-    img.src = imageUrl;
-    img.alt = title;
-    img.classList.add("card-img-top");
-    img.style.cursor = "pointer";
-    img.onclick = () => window.open(link, "_blank"); 
-
-    let cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    let h5 = document.createElement("h5");
-    h5.classList.add("card-title");
-    h5.textContent = title;
-
-    let dateEl = document.createElement("p");
-    dateEl.classList.add("card-date");
-    dateEl.textContent = date;
-
-    cardBody.appendChild(h5);
-    cardBody.appendChild(dateEl);
-    card.appendChild(img);
-    card.appendChild(cardBody);
-    container.appendChild(card);
+    newsArray.forEach((news, index) => {
+        let card = createNewsCard(news.title, news.imageUrl, news.link, news.date);
+        columns[index % columnsCount].appendChild(card);
+    });
 }
+<<<<<<< HEAD
 
 
 const newsArticles= [
@@ -306,3 +308,8 @@ async function fetchSportsNews() {
     fetchSportsNews();
   });
   
+=======
+distributeNews(newsArticles, "newsContainer", 3);
+distributeNews(featuredNewsArticles, "featuredNewsContainer", 2);
+distributeNews(featuredNewsArticles_2, "featuredNewsContainer_2", 4);
+>>>>>>> abe6ab082e47c7ebaefc61e93ec1354945dcec6f
