@@ -79,11 +79,17 @@ margin-right: 4rem;;
   .side_bar a:hover{
     color: rgb(213, 27, 21);
   }
+<<<<<<< HEAD
   .side_image a {
     color: #04151f;
     text-decoration: none;
   }
   .side_bar 
+=======
+  .side_image {
+   
+  }
+>>>>>>> 1752af317827f758973b44225e57c84c270bc8b1
 body {
     font-family: Arial, sans-serif;
   }
