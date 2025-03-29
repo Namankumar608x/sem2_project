@@ -1,16 +1,31 @@
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1050; 
+  text-align: center;
+  display: inline-flex;
+}
+
+.fixed-header img {
+  background-color: #cfc182;
+  max-width: 100%;
+  height: 4rem;
+}
 
 header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-     background-color: rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(28, 138, 234);
-  }
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(8, 9, 23);
+  border-bottom: .3rem solid rgb(62, 165, 255);
+  padding: 10px 0;
+}
 
- 
-  
   .nav-link {
       color: rgb(255, 255, 255);
       transition: color 0.3s ease-in-out;
@@ -24,7 +39,7 @@ header {
   }
   
   .btn-outline-light {
-      border-color: rgb(28, 138, 234);
+      border-color: rgb(96, 179, 251);
       color: rgb(28, 138, 234);
   }
   
@@ -44,18 +59,17 @@ header {
       color: rgb(113, 242, 254);
   }
 
-/*header complete*/
-
 .sports_heading{
-    background-color: bisque;
+    background-color: rgb(184, 185, 185);
     height: 12vh;
  width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
- margin-top: 10vh;
+ margin-top: 20vh;
  margin-bottom: 1rem;
   }
+
   .sports_heading h1{
     color: black;
   }
@@ -145,11 +159,7 @@ margin-right: 1rem;
     overflow: hidden;}
 
 
-.news-card:hover {
-  transform: scale(1.05);
-  height: auto; 
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
+
 
 
 hr {

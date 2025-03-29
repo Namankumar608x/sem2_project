@@ -23,8 +23,7 @@ function displaySportsNews(newsArray, containerId) {
         const newsCard = `
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                <a href = "${news.url}">
-                    <img src="${news.image}" class="card-img-top" alt="${news.title}" /></a>
+                    <img src="${news.image}" class="card-img-top" alt="${news.title}" />
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
                         <p class="card-text">${news.content.substring(0, 150)}...</p>
