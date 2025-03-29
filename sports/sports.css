@@ -1,6 +1,6 @@
-<<<<<<< HEAD:sports/style.css
+
 .fixed-header {
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,9 +17,10 @@
 }
 
 header {
-  position: fixed;
+  position:fixed;
   top: 4rem;
   left: 0;
+  right:0;
   width: 100%;
   z-index: 1000;
   background-color: rgb(8, 9, 23);
@@ -246,8 +247,8 @@ opacity: 1 !important;
        .Container_first{
      height: 40rem;
      margin-top: 4rem;
-     display: flex;
-=======
+     display: flex;}
+
 
 header {
     position: fixed;
@@ -329,17 +330,13 @@ margin-right: 4rem;;
   .side_bar a:hover{
     color: rgb(213, 27, 21);
   }
-<<<<<<< HEAD
+
   .side_image a {
     color: #04151f;
     text-decoration: none;
   }
-  .side_bar 
-=======
-  .side_image {
-   
-  }
->>>>>>> 1752af317827f758973b44225e57c84c270bc8b1
+
+
 body {
     font-family: Arial, sans-serif;
   }
