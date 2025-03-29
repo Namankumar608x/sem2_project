@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 async function fetchSportsNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/sports");
@@ -92,7 +92,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(8080, () => {
     console.log(" Server running on port 8080");
 });
-=======
+
 async function fetchSportsNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/sports");
@@ -133,5 +133,5 @@ function displaySportsNews(newsArray, containerId) {
 }
 
 document.addEventListener("DOMContentLoaded", fetchSportsNews);
->>>>>>> ae8f91fe73a663271bf9ef7e7b7026afe9791c9f
->>>>>>> b3fde33ade7c2b557e98feb85e255be2f52ce00f
+ ae8f91fe73a663271bf9ef7e7b7026afe9791c9f
+ b3fde33ade7c2b557e98feb85e255be2f52ce00f
