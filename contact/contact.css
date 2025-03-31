@@ -1,9 +1,11 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 /* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Georgia', serif;
+    font-family:  serif;
 }
 
 body {
@@ -66,10 +68,7 @@ body {
 }
 
 
-.contact-form input:hover, 
-.contact-form textarea:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
+
 
 
 .contact-form textarea {
@@ -77,11 +76,6 @@ body {
     resize: none;
 }
 
-.contact-form textarea:hover {
-    
-    border: 2px solid #fffffd;
-    background:rgba(248, 3, 3, 0.1);
-}
 
 .contact-form button {
     margin-top: 15px;
@@ -123,10 +117,10 @@ body {
     transform: scale(1.2);
 }
 
-.google { color: #DB4437; } 
-.facebook { color: #1877F2; } 
-.twitter { color: #1DA1F2; } 
-.instagram { color: #E1306C; } /* Pink */
+
+.facebook { color: #a4a4a4; } 
+.twitter { color: #c7c7c7; } 
+.instagram { color: #c5c5c5; } 
 
 
 @media (max-width: 768px) {
