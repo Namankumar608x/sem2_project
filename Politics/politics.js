@@ -48,3 +48,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(8080, () => {
     console.log(" Server running on port 8080");
 });
+// Toggle Search Bar
+function toggleSearchBar() {
+    let searchSidebar = document.getElementById("searchSidebar");
+    searchSidebar.classList.toggle("open");
+}
+
+// Toggle Sidebar Menu
+function toggleSidebar() {
+    let sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+}
+document.getElementById('hamburger').addEventListener('click', function() {
+    var navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
+});
+  

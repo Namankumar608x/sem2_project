@@ -1,0 +1,164 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background: url('newspaper-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.contact-container {
+    background: #050c1f;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%;
+    max-width: 500px;
+    color: #dbdbdb;;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(151, 151, 151, 0.3);
+    transition: 0.3s ease-in-out;
+    border: 2px solid rgb(46, 45, 45);
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.contact-form h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.contact-form p {
+    font-size: 16px;
+    color: #dbdbdb;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid rgb(244, 243, 243);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.contact-form input:hover, 
+.contact-form textarea:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form textarea:hover {
+    
+    border: 2px solid #fffffd;
+    background:rgba(248, 3, 3, 0.1);
+}
+
+.contact-form button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid black;
+    background: #102af0;
+    color: rgb(243, 232, 232);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+}
+
+.social-media {
+    margin-top: 20px;
+}
+.social-media p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    font-size: 28px;
+    margin: 0 10px;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.google { color: #DB4437; } 
+.facebook { color: #1877F2; } 
+.twitter { color: #1DA1F2; } 
+.instagram { color: #E1306C; } /* Pink */
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        height: auto;
+        display: block;
+    }
+
+    .contact-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .contact-form h2 {
+        font-size: 24px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
+
+    .social-icon {
+        font-size: 24px;
+    }
+}
