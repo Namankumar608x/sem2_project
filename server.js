@@ -1,24 +1,21 @@
-// server.js
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./connectMongo.js";
 import newsRoutes from "./routes/newsApi.js";
 import cors from "cors";
 
-dotenv.config(); // Load environment variables
-connectDB(); // Connect to MongoDB
+dotenv.config();
+connectDB(); // ✅ Ensures MongoDB connection
 
 const app = express();
 app.use(express.json());
 
-// Enable CORS
-app.use(
-  cors({
-    origin: ["http://127.0.0.1:5500", "http://localhost:8080"], // Allow these origins
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+// Enable CORS to allow frontend requests
+app.use(cors({
+  origin: ["http://127.0.0.1:5500", "http://localhost:8080"], 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+}));
 
 // 📢 Use News API Routes
 app.use("/api/v1/news", newsRoutes);

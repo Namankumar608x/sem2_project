@@ -1,22 +1,31 @@
-async function fetchSportsNews() {
+async function fetchWorldNews() {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/news/sports");
+        const response = await fetch("http://localhost:8080/api/v1/news/world");
         if (!response.ok) {
-            throw new Error("Failed to fetch sports news.");
+            throw new Error("Failed to fetch world news.");
         }
         const data = await response.json();
-        displaySportsNews(data.slice(0, 4), "sports-container-1");
-        displaySportsNews(data.slice(4, 8), "sports-container-2");
-        displaySportsNews(data.slice(8, 12), "sports-container-3");
-        displaySportsNews(data.slice(12, 16), "sports-container-4");
-        displaySportsNews(data.slice(16, 20), "sports-container-5");
+        console.log("Fetched World News:", data); // Debugging line to check data
+
+        // Ensure there are enough articles before slicing
+        const newsChunks = [0, 4, 8, 12, 16].map(start => data.slice(start, start + 4));
+
+        displayWorldNews(newsChunks[0], "sports-container-1");
+        displayWorldNews(newsChunks[1], "sports-container-2");
+        displayWorldNews(newsChunks[2], "sports-container-3");
+        displayWorldNews(newsChunks[3], "sports-container-4");
+        displayWorldNews(newsChunks[4], "sports-container-5");
     } catch (error) {
-        console.error("Error fetching sports news:", error);
+        console.error("Error fetching world news:", error);
     }
 }
 
-function displaySportsNews(newsArray, containerId) {
+function displayWorldNews(newsArray, containerId) {
     const newsContainer = document.getElementById(containerId);
+    if (!newsContainer) {
+        console.warn(`Container ${containerId} not found.`);
+        return;
+    }
     newsContainer.innerHTML = ""; 
 
     newsArray.forEach((news) => {
@@ -29,6 +38,7 @@ function displaySportsNews(newsArray, containerId) {
                         <p class="card-text">${news.content.substring(0, 150)}...</p>
                         <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
                         <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
+                        <a href="${news.url}" target="_blank" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -37,14 +47,5 @@ function displaySportsNews(newsArray, containerId) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", fetchSportsNews);
-
-const express = require('express');
-const app = express();
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.listen(8080, () => {
-    console.log(" Server running on port 8080");
-});
+// Run fetchWorldNews when the document loads
+document.addEventListener("DOMContentLoaded", fetchWorldNews);
