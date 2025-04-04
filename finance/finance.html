@@ -14,38 +14,59 @@
     <img src="./NationalHerald2.png" alt="National Herald Logo" class="header-img">
 </div>
 
-  <header class="p-3 text-bg-dark">
-    <body>
-   
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      
-        <a  class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="./Screenshot 2025-03-24 093023.png" width="40" height="32" alt="National Herald Logo" />
-        </a>
-
-        <ul class=" nav_bar nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-          <li><a href="../sem2_project/world.html" class="nav-link px-2 text-white">World</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Politics</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Business</a></li>
-          <li><a href="#" class="nav-link px-2 text-white ">Technology</a></li>
-          <li><a href="../sem2_project/sports/sports.html" class="nav-link px-2 text-white ">Sports</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Entertainment</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Contact us</a></li>
-        </ul>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-light" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="text-end">
-          <button  onclick="location.href='loginpage.html'" class="btn btn-outline-light me-2">Login</button>
-          <button onclick="location.href='signin.html'" class="btn btn-warning">Sign-up</button>
-        </div>
+<div class="top-bar">
+  <div class="icons">
+    
+      <div class="search-icon" onclick="toggleSearchBar()">
+        <img src="./menu.png" alt="Menu" class="icon">
+          <img src="./search.png" alt="Search" class="search" >
       </div>
+  </div>
+  <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img"> 
+  </div>
+
+  <div class="auth-buttons">
+      <button onclick="location.href='register.html'" class="btn register-btn">Register</button>
+      <button onclick="location.href='loginpage.html'" class="btn login-btn">Sign In</button>
+  </div>
+</div>
+
+<nav class="navbar">
+<div class="navbar-container">
+    <div class="hamburger" id="hamburger">
+        &#9776; 
     </div>
-  </header>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../World/world.html">World</a>
+      <a href="../Politics/Politics.html">Politics</a>
+      <a href="../finance/finance.html">Business</a>
+      <a href="../technology/technology.html">Technology</a>
+      <a href="../sports/sports.html">Sports</a>
+      <a href="../entertainment/entertainment.html">Entertainment</a>
+      <a href="../contact/contact.html">Contact</a>
+    </div>
+</div>
+</nav>
+<div class="search-sidebar" id="searchSidebar">
+  <div class="search-header">
+      <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
+          <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close" class="icon">
+      </button>
+  </div>
+  <input type="text" class="search-bar" placeholder="Search">
+  <nav class="search-menu">
+    <a href="../index.html">Home</a>
+    <a href="../World/world.html">World</a>
+    <a href="../Politics/Politics.html">Politics</a>
+    <a href="../finance/finance.html">Business</a>
+    <a href="../technology/technology.html">Technology</a>
+    <a href="../sports/sports.html">Sports</a>
+    <a href="../entertainment/entertainment.html">Entertainment</a>
+    <a href="../contact/contact.html">Contact</a>
+  </nav>
+</div>
 
 <div class="sports_heading">
 <h1>Business</h1>
@@ -134,14 +155,14 @@
       <div class="footer-section links">
           <h2>Quick Links</h2>
           <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">World</a></li>
-              <li><a href="#">Politics</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Entertainment</a></li>
-              <li><a href="#">Contact Us</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../World/world.html">World</a></li>
+            <li><a href="../Politics/Politics.html">Politics</a></li>
+            <li><a href="../finance/finance.html">Business</a></li>
+            <li><a href="../technology/technology.html">Technology</a></li>
+            <li><a href="../sports/sports.html">Sports</a></li>
+            <li><a href="../entertainment/entertainment.html">Entertainment</a></li>
+            <li><a href="../contact/contact.html">Contact Us</a></li>
           </ul>
       </div>
 
