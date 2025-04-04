@@ -2,6 +2,8 @@ import express from "express";
 import Sports from "../models/sportsModel.js"; 
 import News from "../models/worldModel.js";
 import TechnologyNews from "../models/technologyModel.js"; 
+import PoliticsNews from "../models/politicsModel.js"; 
+import FinanceNews from "../models/financeModel.js";
 
 const router = express.Router();
 
@@ -63,15 +65,31 @@ router.get("/world", async (req, res) => {
     res.status(500).json({ message: "Error fetching world news." });
   }
 });
+router.get("/politics", async (req, res) => {
+  try {
+    const politicsNews = await PoliticsNews.find({ category: { $regex: /^politics$/i } });
+    res.json(politicsNews);
+  } catch (error) {
+    console.error("Error fetching politics news:", error);
+    res.status(500).json({ message: "Error fetching politics news." });
+  }
+});
+
 
 /** 
  * 📌 Fetch Finance News (Static Response)
  */
-router.get("/finance", (req, res) => {
-  res.json({
-    category: "Finance",
-    message: "💸 Finance news data will be displayed here.",
-  });
+
+
+router.get("/finance", async (req, res) => {
+  try {
+    const financeNews = await FinanceNews.find();
+    res.json(financeNews);
+  } catch (error) {
+    console.error("Error fetching finance news:", error);
+    res.status(500).json({ message: "Error fetching finance news." });
+  }
 });
+
 
 export default router;

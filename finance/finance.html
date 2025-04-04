@@ -1,43 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business</title>
-  <link rel="stylesheet" href="finance.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance</title>
+  <link rel="stylesheet" href="finance.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
   <div class="fixed-header">
-    <img src="./NationalHerald3.png" alt="National Herald Logo" class="header-img">
-    <img src="./NationalHerald.png" alt="National Herald Logo" class="header-img">
-    <img src="./NationalHerald2.png" alt="National Herald Logo" class="header-img">
-</div>
+    <img src="./NationalHerald3.png" alt="National Herald Logo" class="header-img" />
+    <img src="./NationalHerald.png" alt="National Herald Logo" class="header-img" />
+    <img src="./NationalHerald2.png" alt="National Herald Logo" class="header-img" />
+  </div>
 
-<div class="top-bar">
-  <div class="icons">
-    
+  <div class="top-bar">
+    <div class="icons">
       <div class="search-icon" onclick="toggleSearchBar()">
-        <img src="./menu.png" alt="Menu" class="icon">
-          <img src="./search.png" alt="Search" class="search" >
+        <img src="./menu.png" alt="Menu" class="icon" />
+        <img src="./search.png" alt="Search" class="search" />
       </div>
-  </div>
-  <div class="logo">
-      <img src="logo.png" alt="Logo" class="logo-img"> 
-  </div>
-
-  <div class="auth-buttons">
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img" />
+    </div>
+    <div class="auth-buttons">
       <button onclick="location.href='register.html'" class="btn register-btn">Register</button>
       <button onclick="location.href='loginpage.html'" class="btn login-btn">Sign In</button>
-  </div>
-</div>
-
-<nav class="navbar">
-<div class="navbar-container">
-    <div class="hamburger" id="hamburger">
-        &#9776; 
     </div>
-    <div class="nav-links" id="nav-links">
+  </div>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../World/world.html">World</a>
+        <a href="../Politics/Politics.html">Politics</a>
+        <a href="../finance/finance.html">Business</a>
+        <a href="../technology/technology.html">Technology</a>
+        <a href="../sports/sports.html">Sports</a>
+        <a href="../entertainment/entertainment.html">Entertainment</a>
+        <a href="../contact/contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-sidebar" id="searchSidebar">
+    <div class="search-header">
+      <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
+        <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close" class="icon" />
+      </button>
+    </div>
+    <input type="text" class="search-bar" placeholder="Search" />
+    <nav class="search-menu">
       <a href="../index.html">Home</a>
       <a href="../World/world.html">World</a>
       <a href="../Politics/Politics.html">Politics</a>
@@ -46,144 +62,67 @@
       <a href="../sports/sports.html">Sports</a>
       <a href="../entertainment/entertainment.html">Entertainment</a>
       <a href="../contact/contact.html">Contact</a>
-    </div>
-</div>
-</nav>
-<div class="search-sidebar" id="searchSidebar">
-  <div class="search-header">
-      <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
-          <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close" class="icon">
-      </button>
-  </div>
-  <input type="text" class="search-bar" placeholder="Search">
-  <nav class="search-menu">
-    <a href="../index.html">Home</a>
-    <a href="../World/world.html">World</a>
-    <a href="../Politics/Politics.html">Politics</a>
-    <a href="../finance/finance.html">Business</a>
-    <a href="../technology/technology.html">Technology</a>
-    <a href="../sports/sports.html">Sports</a>
-    <a href="../entertainment/entertainment.html">Entertainment</a>
-    <a href="../contact/contact.html">Contact</a>
-  </nav>
-</div>
-
-<div class="sports_heading">
-<h1>Business</h1>
-  </div>
-<hr>
-<div class="container_side">
-  <div class="side_bar">
-    <div class="side_bar_image">
-      <h5>H&M to use digital clones of models in ads and social media</h5>
-      <a href="https://www.bbc.com/news/articles/c3vwg73xndeo" target="_blank">
-        <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/7edd/live/90da2f20-0b07-11f0-a70a-3789f4a4779e.jpg.webp" alt="H&M AI Model">
-      </a>
-      <h6>Fashion retailer H&M is to use artificial intelligence (AI) to create digital "twins" of 30 models.</h6>
-      <p>25-March-2025</p>
-    </div>
-    <hr>
-    <div class="side_bar_image">
-      <h5>Car company faces 'significant shift' with US tariff</h5>
-      <a href="https://www.bbc.com/news/articles/cn0jlprvz7wo" target="_blank">
-        <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/dbe3/live/15faf740-0b0b-11f0-a70a-3789f4a4779e.jpg.webp" alt="Car Company">
-      </a>
-      <h6>A car company boss says a new import tariff of 25% on cars and car parts coming into the US would be a "significant shift" for the business.</h6>
-      <p>25-March-2025</p>
-    </div>
+    </nav>
   </div>
 
-  <div class="side_image">
-    <a href="https://www.thehindu.com/sport/cricket/csk-vs-rcb-live-score-updates-timeline-ipl-2025-chennai-super-kings-vs-royal-challengers-bengaluru-scorecard-march-28-cricket-match-dhoni-kohli/article69385199.ece" target="_blank">
-      <h1>Chinese electric car maker BYD likely to drive into Telangana with first plant in India</h1>
-      <img src="https://th-i.thgim.com/public/incoming/k2a0jr/article69389214.ece/alternates/LANDSCAPE_355/2025-03-27T131535Z_1869804401_RC2NLDARPSL6_RTRMADP_3_BYD-FRANCE.JPG" alt="BYD Plant">
-      <h3>It is expected to be a mega project given the expected investment and will also spur growth of an ecosystem of component makers and create thousands of jobs.</h3>
-      <p>28-March-2025</p>
-    </a>
-  </div>
-</div>
-<hr> 
+  <!-- Section Headings and Containers -->
+  <div class="sports_heading"><h1>Economy</h1></div>
+  <div class="news-section"><div id="finance-container-1" class="news-grid"></div></div>
 
-<div class="sports_heading">
-  <h1>Cricket</h1>
-</div>
-<div class="news-section">
-  <div id="sports-container-1" class="news-grid"></div>
-</div>
+  <div class="sports_heading"><h1>Markets</h1></div>
+  <div class="news-section"><div id="finance-container-2" class="news-grid"></div></div>
 
+  <div class="sports_heading"><h1>Startups</h1></div>
+  <div class="news-section"><div id="finance-container-3" class="news-grid"></div></div>
 
-<div class="sports_heading">
-  <h1>Football</h1>
-</div>
-<div class="news-section">
-  <div id="sports-container-2" class="news-grid"></div>
-</div>
- 
-<div class="sports_heading">
-  <h1>Badminton</h1>
-</div>
-<div class="news-section">
-  <div id="sports-container-3" class="news-grid"></div>
-</div>
+  <div class="sports_heading"><h1>Banking</h1></div>
+  <div class="news-section"><div id="finance-container-4" class="news-grid"></div></div>
 
-<div class="sports_heading">
-  <h1>Tennis</h1>
-</div>
-<div class="news-section">
-  <div id="sports-container-4" class="news-grid"></div>
-</div>
+  <div class="sports_heading"><h1>Companies</h1></div>
+  <div class="news-section"><div id="finance-container-5" class="news-grid"></div></div>
 
-<div class="sports_heading">
-  <h1>Chess</h1>
-</div>
-<div class="news-section">
-  <div id="sports-container-5" class="news-grid"></div>
-</div>
-
-
-  <script src="finance.js"></script> 
+  <script src="finance.js"></script>
 </body>
-
 
 <footer>
   <div class="footer-container">
-      <div class="footer-section about">
-          <h2>About Us</h2>
-          <p>Your trusted source for breaking news, in-depth analysis, and global updates. Stay informed with accurate and timely news coverage.</p>
-      </div>
-      
-      <div class="footer-section links">
-          <h2>Quick Links</h2>
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../World/world.html">World</a></li>
-            <li><a href="../Politics/Politics.html">Politics</a></li>
-            <li><a href="../finance/finance.html">Business</a></li>
-            <li><a href="../technology/technology.html">Technology</a></li>
-            <li><a href="../sports/sports.html">Sports</a></li>
-            <li><a href="../entertainment/entertainment.html">Entertainment</a></li>
-            <li><a href="../contact/contact.html">Contact Us</a></li>
-          </ul>
-      </div>
+    <div class="footer-section about">
+      <h2>About Us</h2>
+      <p>Your trusted source for breaking news, in-depth analysis, and global updates. Stay informed with accurate and timely news coverage.</p>
+    </div>
 
-      <div class="footer-section social">
-          <h2>Follow Us</h2>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a><main></main>
-      </div>
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../World/world.html">World</a></li>
+        <li><a href="../Politics/Politics.html">Politics</a></li>
+        <li><a href="../finance/finance.html">Business</a></li>
+        <li><a href="../technology/technology.html">Technology</a></li>
+        <li><a href="../sports/sports.html">Sports</a></li>
+        <li><a href="../entertainment/entertainment.html">Entertainment</a></li>
+        <li><a href="../contact/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
 
-      <div class="footer-section contact">
-          <h2>Contact Us</h2>
-          <p><i class="fas fa-envelope"></i> contact@newswebsite.com</p>
-          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-          <p><i class="fas fa-map-marker-alt"></i> 123 News Street, New York, USA</p>
-      </div>
+    <div class="footer-section social">
+      <h2>Follow Us</h2>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="footer-section contact">
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-envelope"></i> contact@newswebsite.com</p>
+      <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+      <p><i class="fas fa-map-marker-alt"></i> 123 News Street, New York, USA</p>
+    </div>
   </div>
 
   <div class="footer-bottom">
-      <p>&copy; 2024 News Website | All Rights Reserved</p>
+    <p>&copy; 2024 News Website | All Rights Reserved</p>
   </div>
 </footer>
 </html>

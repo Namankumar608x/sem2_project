@@ -1,21 +1,23 @@
-async function fetchSportsNews() {
+async function fetchFinanceNews() {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/news/sports");
+        const response = await fetch("http://localhost:8080/api/v1/news/finance");
         if (!response.ok) {
-            throw new Error("Failed to fetch sports news.");
+            throw new Error("Failed to fetch finance news.");
         }
         const data = await response.json();
-        displaySportsNews(data.slice(0, 4), "sports-container-1");
-        displaySportsNews(data.slice(4, 8), "sports-container-2");
-        displaySportsNews(data.slice(8, 12), "sports-container-3");
-        displaySportsNews(data.slice(12, 16), "sports-container-4");
-        displaySportsNews(data.slice(16, 20), "sports-container-5");
+
+        // Distribute into five sections
+        displayFinanceNews(data.slice(0, 4), "finance-container-1");  // Economy
+        displayFinanceNews(data.slice(4, 8), "finance-container-2");  // Markets
+        displayFinanceNews(data.slice(8, 12), "finance-container-3"); // Startups
+        displayFinanceNews(data.slice(12, 16), "finance-container-4"); // Banking
+        displayFinanceNews(data.slice(16, 20), "finance-container-5"); // Companies
     } catch (error) {
-        console.error("Error fetching sports news:", error);
+        console.error("Error fetching finance news:", error);
     }
 }
 
-function displaySportsNews(newsArray, containerId) {
+function displayFinanceNews(newsArray, containerId) {
     const newsContainer = document.getElementById(containerId);
     newsContainer.innerHTML = ""; 
 
@@ -37,14 +39,4 @@ function displaySportsNews(newsArray, containerId) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", fetchSportsNews);
-
-const express = require('express');
-const app = express();
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.listen(8080, () => {
-    console.log(" Server running on port 8080");
-});
+document.addEventListener("DOMContentLoaded", fetchFinanceNews);
