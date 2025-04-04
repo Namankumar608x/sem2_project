@@ -1,50 +1,37 @@
-async function fetchSportsNews() {
+async function fetchEntertainmentNews() {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/news/sports");
-        if (!response.ok) {
-            throw new Error("Failed to fetch sports news.");
-        }
-        const data = await response.json();
-        displaySportsNews(data.slice(0, 4), "sports-container-1");
-        displaySportsNews(data.slice(4, 8), "sports-container-2");
-        displaySportsNews(data.slice(8, 12), "sports-container-3");
-        displaySportsNews(data.slice(12, 16), "sports-container-4");
-        displaySportsNews(data.slice(16, 20), "sports-container-5");
+      const response = await fetch("http://localhost:8080/api/v1/news/entertainment");
+      const data = await response.json();
+      displayEntertainmentNews(data.slice(0, 4), "entertainment-container-1");
+      displayEntertainmentNews(data.slice(4, 8), "entertainment-container-2");
+      displayEntertainmentNews(data.slice(8, 12), "entertainment-container-3");
+      displayEntertainmentNews(data.slice(12, 16), "entertainment-container-4");
+      displayEntertainmentNews(data.slice(16, 20), "entertainment-container-5");
     } catch (error) {
-        console.error("Error fetching sports news:", error);
+      console.error("Error fetching entertainment news:", error);
     }
-}
-
-function displaySportsNews(newsArray, containerId) {
-    const newsContainer = document.getElementById(containerId);
-    newsContainer.innerHTML = ""; 
-
-    newsArray.forEach((news) => {
-        const newsCard = `
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="${news.image}" class="card-img-top" alt="${news.title}" />
-                    <div class="card-body">
-                        <h5 class="card-title">${news.title}</h5>
-                        <p class="card-text">${news.content.substring(0, 150)}...</p>
-                        <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-                        <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
-                    </div>
-                </div>
+  }
+  
+  function displayEntertainmentNews(newsArray, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return; // Safeguard in case a container doesn't exist
+    container.innerHTML = "";
+  
+    newsArray.forEach(news => {
+      container.innerHTML += `
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <img src="${news.image}" class="card-img-top" alt="${news.title}" />
+            <div class="card-body">
+              <h5 class="card-title">${news.title}</h5>
+              <p class="card-text">${news.content.substring(0, 150)}...</p>
+              <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
+              <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
             </div>
-        `;
-        newsContainer.innerHTML += newsCard;
+          </div>
+        </div>`;
     });
-}
-
-document.addEventListener("DOMContentLoaded", fetchSportsNews);
-
-const express = require('express');
-const app = express();
-const path = require('path');
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.listen(8080, () => {
-    console.log(" Server running on port 8080");
-});
+  }
+  
+  document.addEventListener("DOMContentLoaded", fetchEntertainmentNews);
+  

@@ -4,6 +4,7 @@ import News from "../models/worldModel.js";
 import TechnologyNews from "../models/technologyModel.js"; 
 import PoliticsNews from "../models/politicsModel.js"; 
 import FinanceNews from "../models/financeModel.js";
+import EntertainmentNews from "../models/entertainmentModel.js"; // ✅ Correct model name
 
 const router = express.Router();
 
@@ -15,7 +16,7 @@ router.get("/", (req, res) => {
 });
 
 /** 
- * 📌 Fetch Sports News (JSON Response)
+ * 📌 Fetch Sports News
  */
 router.get("/sports", async (req, res) => {
   try {
@@ -45,7 +46,7 @@ router.get("/sports-page", async (req, res) => {
  */
 router.get("/technology", async (req, res) => {
   try {
-    const techNews = await TechnologyNews.find();  // ✅ Fixed model usage
+    const techNews = await TechnologyNews.find();
     res.json(techNews);
   } catch (error) {
     console.error("Error fetching technology news:", error);
@@ -65,6 +66,10 @@ router.get("/world", async (req, res) => {
     res.status(500).json({ message: "Error fetching world news." });
   }
 });
+
+/** 
+ * 📌 Fetch Politics News
+ */
 router.get("/politics", async (req, res) => {
   try {
     const politicsNews = await PoliticsNews.find({ category: { $regex: /^politics$/i } });
@@ -75,12 +80,9 @@ router.get("/politics", async (req, res) => {
   }
 });
 
-
 /** 
- * 📌 Fetch Finance News (Static Response)
+ * 📌 Fetch Finance News
  */
-
-
 router.get("/finance", async (req, res) => {
   try {
     const financeNews = await FinanceNews.find();
@@ -91,5 +93,17 @@ router.get("/finance", async (req, res) => {
   }
 });
 
+/** 
+ * 📌 Fetch Entertainment News ✅
+ */
+router.get("/entertainment", async (req, res) => {
+  try {
+    const entertainmentNews = await EntertainmentNews.find();
+    res.json(entertainmentNews);
+  } catch (error) {
+    console.error("Error fetching entertainment news:", error);
+    res.status(500).json({ message: "Error fetching entertainment news." });
+  }
+});
 
 export default router;
