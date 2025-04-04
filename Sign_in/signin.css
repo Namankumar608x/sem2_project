@@ -1,0 +1,103 @@
+/* Reset + box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+        no-repeat center center/cover;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.contact-container {
+    background-color: #050c1f;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    max-width: 500px;
+    width: 100%;
+    height: 70vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-container:hover{
+    scale: 1.02;     
+
+    box-shadow: 0 8px 25px rgba(189, 189, 189, 0.7);
+}
+
+.contact-container img {
+    width: 120px;
+    margin-bottom: 50px;
+}
+
+.contact-container h2 {
+    font-size: 25px;
+    margin-bottom: 90px;
+}
+
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.sign_in {
+    color: #4da3ff;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.sign_in:hover {
+    color:rgb(254, 255, 255)
+}
+
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 20px;
+        width: 90%;
+    }
+    .contact-container h2 {
+        font-size: 20px;
+    }
+
+    .form-control,
+    .btn-primary {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .contact-container img {
+        width: 80px;
+    }
+}

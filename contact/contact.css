@@ -1,33 +1,37 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:  serif;
+    font-family: 'Poppins', sans-serif;
 }
 
+
 body {
-    background: url('newspaper-bg.jpg') no-repeat center center/cover;
+    background: url('https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?q=80&w=2070&auto=format&fit=crop') 
+        no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
 }
 
 .contact-container {
-    background: #050c1f;
+    background-color: #050c1f;
     padding: 30px;
-    border-radius: 10px;
-    width: 40%;
+    border-radius: 15px;
+    color: white;
     max-width: 500px;
-    color: #dbdbdb;;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
-    box-shadow: 0px 0px 15px rgba(151, 151, 151, 0.3);
-    transition: 0.3s ease-in-out;
-    border: 2px solid rgb(46, 45, 45);
+    transition: all 0.4s ease;
+}
+
+.contact-container:hover {
+    transform: scale(1.02);
+    background-color: #050c1f;
+    box-shadow: 0 8px 25px rgba(189, 189, 189, 0.7);
 }
 
 .logo img {
@@ -38,12 +42,13 @@ body {
 
 .contact-form h2 {
     margin-bottom: 10px;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 600;
     text-transform: uppercase;
 }
+
 .contact-form p {
-    font-size: 16px;
+    font-size: 15px;
     color: #dbdbdb;
     margin-bottom: 15px;
 }
@@ -52,76 +57,86 @@ body {
     display: block;
     text-align: left;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.contact-form input, 
+.contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border: 2px solid rgb(244, 243, 243);
+    border: 2px solid #f4f3f3;
     border-radius: 5px;
-    font-size: 16px;
-    transition: 0.3s ease-in-out;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
-
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
 
 .contact-form textarea {
-    height: 120px;
+    height: 80px;
     resize: none;
+    margin-bottom: 20px;
 }
 
-
-.contact-form button {
-    margin-top: 15px;
+.submit {
     width: 100%;
     padding: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    border: 2px solid black;
-    background: #102af0;
-    color: rgb(243, 232, 232);
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
+    background-color: #007bff;
+    color: white;
+    border: none;
     border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.contact-form button:hover {
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    transform: scale(1.05);
+.submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
 }
+
 
 .social-media {
     margin-top: 20px;
 }
+
 .social-media p {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
     margin-bottom: 10px;
 }
 
 .social-icon {
-    font-size: 28px;
+    font-size: 24px;
     margin: 0 10px;
-    color: black;
-    transition: transform 0.3s ease-in-out;
+    color: #ccc;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icon:hover {
     transform: scale(1.2);
+    color: #fff;
 }
 
 
-.facebook { color: #a4a4a4; } 
-.twitter { color: #c7c7c7; } 
-.instagram { color: #c5c5c5; } 
+.facebook {
+    color: #a4a4a4;
+}
 
+.twitter {
+    color: #c7c7c7;
+}
+
+.instagram {
+    color: #c5c5c5;
+}
 
 @media (max-width: 768px) {
     body {
@@ -140,7 +155,7 @@ body {
     }
 
     .contact-form h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .contact-form input,
@@ -149,10 +164,22 @@ body {
     }
 
     .contact-form button {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .social-icon {
-        font-size: 24px;
+        font-size: 22px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
