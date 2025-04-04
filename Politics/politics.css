@@ -316,7 +316,7 @@ hr {
     justify-content: space-evenly;
     gap: 1rem;
     padding: 1rem;
-    max-width: 1200px;
+    max-width: 1800px;
     margin: auto;
   }
 
@@ -354,7 +354,7 @@ hr {
   
   .side_image img {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     display: block;
     margin: 0 auto;
   }
