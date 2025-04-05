@@ -315,6 +315,39 @@
     opacity: 1;
 }
 
+.breaking-news {
+    width: 100%;
+    overflow: hidden;
+    background: #c62828;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+  
+  .news-ticker {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: scroll-news 20s linear infinite;
+  }
+  
+  .news-ticker span {
+    margin-right: 100px;
+  }
+  
+  @keyframes scroll-news {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
 .carousel-caption{
     color: white !important;
     background-color: #000000;

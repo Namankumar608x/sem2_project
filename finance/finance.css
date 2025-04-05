@@ -414,35 +414,8 @@ hr {
     margin-bottom: 20px;
   }
   
-  .footer-section h2 {
-    font-size: 18px;
-    border-bottom: 2px solid #ffffff;
-    padding-bottom: 5px;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul li a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-section ul li a:hover {
-    color: rgb(32, 147, 170);
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 15px;
-    background-color: #04151f;
-  }
+
+
   
   @media (max-width: 992px) {
     .container_side {
