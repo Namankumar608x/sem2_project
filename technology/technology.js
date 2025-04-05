@@ -33,3 +33,19 @@ async function fetchTechnologyNews() {
   
   document.addEventListener("DOMContentLoaded", fetchTechnologyNews);
   
+
+function toggleSearchBar() {
+  let searchSidebar = document.getElementById("searchSidebar");
+  searchSidebar.classList.toggle("open");
+}
+
+
+function toggleSidebar() {
+  let sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("open");
+}
+
+document.getElementById('hamburger').addEventListener('click', function () {
+  var navLinks = document.getElementById('nav-links');
+  navLinks.classList.toggle('active');
+});

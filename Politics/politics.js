@@ -1,4 +1,4 @@
-// Fetch and display Politics news
+
 async function fetchPoliticsNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/politics");
@@ -39,16 +39,16 @@ function displayPoliticsNews(newsArray, containerId) {
     });
 }
 
-// Run fetch when page loads
+
 document.addEventListener("DOMContentLoaded", fetchPoliticsNews);
 
-// Toggle Search Bar
+
 function toggleSearchBar() {
     let searchSidebar = document.getElementById("searchSidebar");
     searchSidebar.classList.toggle("open");
 }
 
-// Toggle Sidebar Menu
+
 function toggleSidebar() {
     let sidebar = document.getElementById("sidebar");
     sidebar.classList.toggle("open");

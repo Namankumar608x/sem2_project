@@ -1,21 +1,23 @@
-async function fetchSportsNews() {
+// Fetch and display Politics news
+async function fetchPoliticsNews() {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/news/sports");
+        const response = await fetch("http://localhost:8080/api/v1/news/politics");
         if (!response.ok) {
-            throw new Error("Failed to fetch sports news.");
+            throw new Error("Failed to fetch politics news.");
         }
         const data = await response.json();
-        displaySportsNews(data.slice(0, 4), "sports-container-1");
-        displaySportsNews(data.slice(4, 8), "sports-container-2");
-        displaySportsNews(data.slice(8, 12), "sports-container-3");
-        displaySportsNews(data.slice(12, 16), "sports-container-4");
-        displaySportsNews(data.slice(16, 20), "sports-container-5");
+        displayPoliticsNews(data.slice(0, 2), "politics-container-1");
+        displayPoliticsNews(data.slice(2, 8), "politics-container-2");
+        displayPoliticsNews(data.slice(8, 12), "politics-container-3");
+        displayPoliticsNews(data.slice(12, 16), "politics-container-4");
+        displayPoliticsNews(data.slice(16, 20), "politics-container-5");
+
     } catch (error) {
-        console.error("Error fetching sports news:", error);
+        console.error("Error fetching politics news:", error);
     }
 }
 
-function displaySportsNews(newsArray, containerId) {
+function displayPoliticsNews(newsArray, containerId) {
     const newsContainer = document.getElementById(containerId);
     newsContainer.innerHTML = ""; 
 
@@ -37,11 +39,15 @@ function displaySportsNews(newsArray, containerId) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", fetchSportsNews);
+
+document.addEventListener("DOMContentLoaded", fetchPoliticsNews);
+
+
 function toggleSearchBar() {
     let searchSidebar = document.getElementById("searchSidebar");
     searchSidebar.classList.toggle("open");
 }
+
 
 function toggleSidebar() {
     let sidebar = document.getElementById("sidebar");

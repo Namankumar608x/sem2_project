@@ -34,8 +34,7 @@ function distributeNews(newsArray, containerId, columnsCount = 3) {
     });
 }
 
-  
-  // Fetch sports news when page loads
+
   document.addEventListener("DOMContentLoaded", () => {
     fetchSportsNews();
   });

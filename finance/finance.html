@@ -6,35 +6,32 @@
   <title>Finance</title>
   <link rel="stylesheet" href="finance.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="fixed-header">
-    <img src="./NationalHerald3.png" alt="National Herald Logo" class="header-img" />
-    <img src="./NationalHerald.png" alt="National Herald Logo" class="header-img" />
-    <img src="./NationalHerald2.png" alt="National Herald Logo" class="header-img" />
-  </div>
 
+<body>
   <div class="top-bar">
     <div class="icons">
       <div class="search-icon" onclick="toggleSearchBar()">
-        <img src="./menu.png" alt="Menu" class="icon" />
-        <img src="./search.png" alt="Search" class="search" />
+        <img src="./menu.png" alt="Menu Icon" class="icon" />
+        <img src="./search.png" alt="Search Icon" class="search" />
       </div>
     </div>
     <div class="logo">
-      <img src="logo.png" alt="Logo" class="logo-img" />
+      <img src="logo.png" alt="National Herald Logo" class="logo-img img-fluid" /> 
     </div>
     <div class="auth-buttons">
       <button onclick="location.href='register.html'" class="btn register-btn">Register</button>
       <button onclick="location.href='loginpage.html'" class="btn login-btn">Sign In</button>
     </div>
   </div>
-
+  
   <nav class="navbar">
     <div class="navbar-container">
       <div class="hamburger" id="hamburger">&#9776;</div>
       <div class="nav-links" id="nav-links">
-        <a href="../index.html">Home</a>
+        <a href="../Main_page/index.html">Home</a>
         <a href="../World/world.html">World</a>
         <a href="../Politics/Politics.html">Politics</a>
         <a href="../finance/finance.html">Business</a>
@@ -45,16 +42,16 @@
       </div>
     </div>
   </nav>
-
+  
   <div class="search-sidebar" id="searchSidebar">
     <div class="search-header">
       <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
-        <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close" class="icon" />
+        <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close Search Icon" class="icon">
       </button>
     </div>
-    <input type="text" class="search-bar" placeholder="Search" />
+    <input type="text" class="search-bar" placeholder="Search">
     <nav class="search-menu">
-      <a href="../index.html">Home</a>
+      <a href="../Main_page/index.html">Home</a>
       <a href="../World/world.html">World</a>
       <a href="../Politics/Politics.html">Politics</a>
       <a href="../finance/finance.html">Business</a>
@@ -64,8 +61,44 @@
       <a href="../contact/contact.html">Contact</a>
     </nav>
   </div>
+  
+  <main>
+    <div class="sports_heading">
+      <h1>BUSINESS</h1>
+    </div>
+  
+    <div class="container_side">
+      <div class="side_bar">
+        <div class="side_bar_image">
+          <h5>Companies defend India’s startup proposition after Piyush Goyal’s jibe stirs debate</h5>
+          <a href="https://www.thehindu.com/business/Industry/companies-defend-indias-startup-proposition-after-piyush-goyals-jibe-stirs-debate/article69415348.ece" target="_blank">
+            <img src="https://th-i.thgim.com/public/business/Industry/mgwe49/article69415350.ece/alternates/LANDSCAPE_1200/20250403475L.jpg" alt="Election Commission Announcement" class="img-fluid" />
+          </a>
+          <h6>Indian entrepreneurs unite to defend startup ecosystem against criticism, emphasizing the need for local champions and innovation support..</h6>
+          <p>05-April-2025</p>
+        </div>
+        <hr>
+        <div class="side_bar_image">
+          <h5>US tariffs will clearly have economic impact - PM</h5>
+          <a href="https://www.bbc.com/news/articles/cn05dge02vzo" target="_blank">
+            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/7d36/live/9c4b1a60-106e-11f0-b234-07dc7691c360.png.webp" class="img-fluid">
+          </a>
+          <h6>Donald Trump's tariffs will "clearly" have an economic impact on the UK and globally, Prime Minister Sir Keir Starmer has told business leaders in Downing Street</h6>
+          <p>03-April-2025</p>
+        </div>
+      </div>
+  
+      <div class="side_image">
+        <a href="https://www.thehindu.com/news/national/parliament-clears-waqf-amendment-bill/article69410107.ece" target="_blank">
+          <h1>Trump tariffs | Sectors in India that find themselves in a spotlight </h1>
+          <img src="https://th-i.thgim.com/public/incoming/oqylir/article69408966.ece/alternates/LANDSCAPE_1200/AP04_03_2025_000071A.jpg" alt="PM Modi Bharat Digital Mission" class="img-fluid">
+          <h3>The White House held these tariffs strived to “strengthen the international economic position of United States and protect American workers” </h3>
+          <p>05-April-2025</p>
+        </a>
+      </div>
+    </div>
+    <hr>
 
-  <!-- Section Headings and Containers -->
   <div class="sports_heading"><h1>Economy</h1></div>
   <div class="news-section"><div id="finance-container-1" class="news-grid"></div></div>
 
@@ -83,46 +116,43 @@
 
   <script src="finance.js"></script>
 </body>
-
-<footer>
-  <div class="footer-container">
+<footer class="footer">
+  <div class="footer-content">
     <div class="footer-section about">
-      <h2>About Us</h2>
+      <h4>About Us</h4>
       <p>Your trusted source for breaking news, in-depth analysis, and global updates. Stay informed with accurate and timely news coverage.</p>
     </div>
+    <div class="footer-section social-section">
+    
+      <h4>Follow us</h4>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
 
-    <div class="footer-section links">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../World/world.html">World</a></li>
-        <li><a href="../Politics/Politics.html">Politics</a></li>
-        <li><a href="../finance/finance.html">Business</a></li>
-        <li><a href="../technology/technology.html">Technology</a></li>
-        <li><a href="../sports/sports.html">Sports</a></li>
-        <li><a href="../entertainment/entertainment.html">Entertainment</a></li>
-        <li><a href="../contact/contact.html">Contact Us</a></li>
-      </ul>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>Address</h4>
+      <p> 123 Media Street, New Delhi, India</p>
     </div>
 
-    <div class="footer-section social">
-      <h2>Follow Us</h2>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-
-    <div class="footer-section contact">
-      <h2>Contact Us</h2>
-      <p><i class="fas fa-envelope"></i> contact@newswebsite.com</p>
-      <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-      <p><i class="fas fa-map-marker-alt"></i> 123 News Street, New York, USA</p>
+    <div class="footer-section">
+      <a href="https://play.google.com/store" target="_blank" class="playstore-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+      </a>
+      <a href="https://www.apple.com/in/app-store/" target="_blank" class="playstore-link">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+      </a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2024 News Website | All Rights Reserved</p>
+    <p>&copy; 2025 News Website | All Rights Reserved</p>
   </div>
 </footer>
+<script src="finance.js"></script>
 </html>
+
