@@ -98,7 +98,7 @@ router.get("/finance", async (req, res) => {
  */
 router.get("/entertainment", async (req, res) => {
   try {
-    const entertainmentNews = await EntertainmentNews.find();
+    const entertainmentNews = await EntertainmentNews.find().sort({ _id: 1 }); 
     res.json(entertainmentNews);
   } catch (error) {
     console.error("Error fetching entertainment news:", error);
