@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
  */
 router.get("/sports", async (req, res) => {
   try {
-    const sportsNews = await Sports.find({ category: "Sports" });
+    const sportsNews = await Sports.find({ category: "Sports" }).sort({ _id: 1 });
     res.json(sportsNews);
   } catch (error) {
     console.error("Error fetching sports news:", error);
@@ -33,7 +33,7 @@ router.get("/sports", async (req, res) => {
  */
 router.get("/sports-page", async (req, res) => {
   try {
-    const sportsNews = await Sports.find({ category: "Sports" });
+    const sportsNews = await Sports.find({ category: "Sports" }).sort({ _id: 1 });
     res.render("sports", { news: sportsNews });
   } catch (error) {
     console.error("Error rendering sports page:", error);
@@ -46,7 +46,7 @@ router.get("/sports-page", async (req, res) => {
  */
 router.get("/technology", async (req, res) => {
   try {
-    const techNews = await TechnologyNews.find();
+    const techNews = await TechnologyNews.find().sort({ _id: 1 });
     res.json(techNews);
   } catch (error) {
     console.error("Error fetching technology news:", error);
@@ -59,7 +59,7 @@ router.get("/technology", async (req, res) => {
  */
 router.get("/world", async (req, res) => {
   try {
-    const worldNews = await News.find({ category: "World" });
+    const worldNews = await News.find({ category: "World" }).sort({ _id: 1 });
     res.json(worldNews);
   } catch (error) {
     console.error("Error fetching world news:", error);
@@ -72,7 +72,7 @@ router.get("/world", async (req, res) => {
  */
 router.get("/politics", async (req, res) => {
   try {
-    const politicsNews = await PoliticsNews.find({ category: { $regex: /^politics$/i } });
+    const politicsNews = await PoliticsNews.find({ category: { $regex: /^politics$/i } }).sort({ _id: 1 });
     res.json(politicsNews);
   } catch (error) {
     console.error("Error fetching politics news:", error);
@@ -85,7 +85,7 @@ router.get("/politics", async (req, res) => {
  */
 router.get("/finance", async (req, res) => {
   try {
-    const financeNews = await FinanceNews.find();
+    const financeNews = await FinanceNews.find().sort({ _id: 1 });
     res.json(financeNews);
   } catch (error) {
     console.error("Error fetching finance news:", error);
