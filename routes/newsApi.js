@@ -4,7 +4,9 @@ import News from "../models/worldModel.js";
 import TechnologyNews from "../models/technologyModel.js"; 
 import PoliticsNews from "../models/politicsModel.js"; 
 import FinanceNews from "../models/financeModel.js";
-import EntertainmentNews from "../models/entertainmentModel.js"; // ✅ Correct model name
+import EntertainmentNews from "../models/entertainmentModel.js"; 
+import MainPageNews from "../models/mainPageModel.js";
+// ✅ Correct model name
 
 const router = express.Router();
 
@@ -105,5 +107,21 @@ router.get("/entertainment", async (req, res) => {
     res.status(500).json({ message: "Error fetching entertainment news." });
   }
 });
+/** 
+ * 🏠 Fetch Main Page News for index.html 
+ */
+
+router.get("/main-page", async (req, res) => {
+  try {
+    const mainPageNews = await MainPageNews.find().sort({ _id: 1 });
+    res.json(mainPageNews);
+  } catch (error) {
+    console.error("Error fetching main page news:", error);
+    res.status(500).json({ message: "Error fetching main page news." });
+  }
+});
+
+
+
 
 export default router;

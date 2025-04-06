@@ -1,23 +1,24 @@
-// Fetch and display Politics news
-async function fetchPoliticsNews() {
+// Fetch and display Main Page news
+async function fetchMainPageNews() {
     try {
-        const response = await fetch("http://localhost:8080/api/v1/news/politics");
+        const response = await fetch("http://localhost:8080/api/v1/news/main-page");
         if (!response.ok) {
-            throw new Error("Failed to fetch politics news.");
+            throw new Error("Failed to fetch main page news.");
         }
         const data = await response.json();
-        displayPoliticsNews(data.slice(0, 2), "politics-container-1");
-        displayPoliticsNews(data.slice(2, 6), "politics-container-2");
-        displayPoliticsNews(data.slice(6, 12), "politics-container-3");
-        displayPoliticsNews(data.slice(12, 16), "politics-container-4");
-        displayPoliticsNews(data.slice(16, 20), "politics-container-5");
+
+        displayMainPageNews(data.slice(0, 2), "main-page-container-1");
+        displayMainPageNews(data.slice(2, 6), "main-page-container-2");
+        displayMainPageNews(data.slice(6, 12), "main-page-container-3");
+        displayMainPageNews(data.slice(12, 16), "main-page-container-4");
+        displayMainPageNews(data.slice(16, 20), "main-page-container-5");
 
     } catch (error) {
-        console.error("Error fetching politics news:", error);
+        console.error("Error fetching main page news:", error);
     }
 }
 
-function displayPoliticsNews(newsArray, containerId) {
+function displayMainPageNews(newsArray, containerId) {
     const newsContainer = document.getElementById(containerId);
     newsContainer.innerHTML = ""; 
 
@@ -38,6 +39,8 @@ function displayPoliticsNews(newsArray, containerId) {
         newsContainer.innerHTML += newsCard;
     });
 }
+
+// Optional utility function (unused here but maybe useful later)
 function distributeNews(newsArray, containerId, columnsCount = 3) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -45,25 +48,24 @@ function distributeNews(newsArray, containerId, columnsCount = 3) {
         return;
     }
 
- 
     container.innerHTML = "";
 
-    
     const columns = Array.from({ length: columnsCount }, () => {
         const col = document.createElement("div");
         col.classList.add("news-column");
         container.appendChild(col);
         return col;
-    });}
+    });
+}
 
-document.addEventListener("DOMContentLoaded", fetchPoliticsNews);
+document.addEventListener("DOMContentLoaded", fetchMainPageNews);
 
 
+// Sidebar and navbar toggles
 function toggleSearchBar() {
     let searchSidebar = document.getElementById("searchSidebar");
     searchSidebar.classList.toggle("open");
 }
-
 
 function toggleSidebar() {
     let sidebar = document.getElementById("sidebar");
