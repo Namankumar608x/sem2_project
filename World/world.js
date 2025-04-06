@@ -38,7 +38,10 @@ function displayWorldNews(newsArray, containerId) {
                         <p class="card-text">${news.content.substring(0, 150)}...</p>
                         <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
                         <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
-                        <a href="${news.url}" target="_blank" class="btn btn-primary">Read More</a>
+                   <a href="../article.html?category=world&id=${news._id}" class="btn btn-primary">Read More</a>
+
+
+
                     </div>
                 </div>
             </div>

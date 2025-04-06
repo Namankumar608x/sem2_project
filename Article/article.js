@@ -1,28 +1,32 @@
-async function fetchArticle() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const articleId = urlParams.get("id");
-  
-    if (!articleId) {
-      document.getElementById("article-container").innerHTML = "<p>Article not found.</p>";
-      return;
-    }
-  
-    try {
-      const response = await fetch(`http://localhost:8080/api/v1/news/entertainment/${articleId}`);
-      const article = await response.json();
-  
-      document.getElementById("article-container").innerHTML = `
-        <h1>${article.title}</h1>
-        <img src="${article.image}" alt="${article.title}" />
-        <p><strong>Published:</strong> ${new Date(article.date_published).toLocaleDateString()}</p>
-        <p>${article.content}</p>
-        <p><strong>Tags:</strong> ${article.tags.join(', ')}</p>
-      `;
-    } catch (error) {
-      document.getElementById("article-container").innerHTML = "<p>Error loading article.</p>";
-      console.error("Error fetching article:", error);
-    }
+document.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const category = params.get("category");
+
+  if (!id || !category) {
+    document.getElementById("article-container").innerHTML = "<p>Invalid article URL.</p>";
+    return;
   }
-  
-  document.addEventListener("DOMContentLoaded", fetchArticle);
-  
+
+  try {
+    const response = await fetch(`/api/v1/news/article/${category}/${id}`);
+    const data = await response.json();
+
+    if (response.ok) {
+      document.getElementById("article-title").textContent = data.title;
+      document.getElementById("article-date").textContent = `Published on: ${new Date(data.date_published).toDateString()}`;
+      document.getElementById("article-image").src = data.image;
+      document.getElementById("article-content").textContent = data.content;
+
+      // Dynamically set category tag
+      document.getElementById("article-category").textContent = data.category;
+
+      // Optional: Change back link to go to category page (e.g., world.html)
+      document.getElementById("back-link").href = `${data.category.toLowerCase()}.html`;
+    } else {
+      document.getElementById("article-container").innerHTML = `<p>${data.message}</p>`;
+    }
+  } catch (error) {
+    document.getElementById("article-container").innerHTML = "<p>Error loading article.</p>";
+  }
+});

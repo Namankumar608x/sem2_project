@@ -120,6 +120,50 @@ router.get("/main-page", async (req, res) => {
     res.status(500).json({ message: "Error fetching main page news." });
   }
 });
+import mongoose from "mongoose"; // ✅ Ensure this line is present at the top if not already
+
+// 📌 Fetch a single article by category and id
+router.get("/article/:category/:id", async (req, res) => {
+  const { category, id } = req.params;
+
+  let Model;
+  switch (category.toLowerCase()) {
+    case "world":
+      Model = News;
+      break;
+    case "sports":
+      Model = Sports;
+      break;
+    case "technology":
+      Model = TechnologyNews;
+      break;
+    case "finance":
+      Model = FinanceNews;
+      break;
+    case "entertainment":
+      Model = EntertainmentNews;
+      break;
+    case "politics":
+      Model = PoliticsNews;
+      break;
+    case "main-page":
+      Model = MainPageNews;
+      break;
+    default:
+      return res.status(400).json({ message: "Invalid category." });
+  }
+
+  try {
+    const article = await Model.findById(Number(id)); // 👈 Convert to number
+    if (!article) {
+      return res.status(404).json({ message: "Article not found." });
+    }
+    res.json(article);
+  } catch (error) {
+    console.error("Error fetching article:", error);
+    res.status(500).json({ message: "Error fetching article." });
+  }
+});
 
 
 
