@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Main </title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAIN PAGE</title>
+
+  <link rel="stylesheet" href="index.css"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
   <div class="top-bar">
     <div class="icons">
-      
-        <div class="search-icon" onclick="toggleSearchBar()">
-          <img src="./menu.png" alt="Menu" class="icon">
-            <img src="./search.png" alt="Search" class="search" >
-        </div>
+      <div class="search-icon" onclick="toggleSearchBar()">
+        <img src="./menu.png" alt="Menu Icon" class="icon" />
+        <img src="./search.png" alt="Search Icon" class="search" />
+      </div>
     </div>
     <div class="logo">
-        <img src="logo.png" alt="Logo" class="logo-img"> 
+      <img src="logo.png" alt="National Herald Logo" class="logo-img img-fluid" /> 
     </div>
-
     <div class="auth-buttons">
-        <button onclick="location.href='register.html'" class="btn register-btn">Register</button>
-        <button onclick="location.href='loginpage.html'" class="btn login-btn">Sign In</button>
+      <button onclick="location.href='register.html'" class="btn register-btn">Register</button>
+      <button onclick="location.href='loginpage.html'" class="btn login-btn">Sign In</button>
     </div>
-</div>
+  </div>
 
-<nav class="navbar">
-  <div class="navbar-container">
-      <div class="hamburger" id="hamburger">
-          &#9776; 
-      </div>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="hamburger" id="hamburger">&#9776;</div>
       <div class="nav-links" id="nav-links">
-        <a href="../index.html">Home</a>
+        <a href="../Main_page/index.html">Home</a>
         <a href="../World/world.html">World</a>
         <a href="../Politics/Politics.html">Politics</a>
         <a href="../finance/finance.html">Business</a>
@@ -45,17 +41,18 @@
         <a href="../entertainment/entertainment.html">Entertainment</a>
         <a href="../contact/contact.html">Contact</a>
       </div>
-  </div>
-</nav>
-<div class="search-sidebar" id="searchSidebar">
+    </div>
+  </nav>
+
+  <div class="search-sidebar" id="searchSidebar">
     <div class="search-header">
-        <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
-            <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close" class="icon">
-        </button>
+      <button class="close-search" style="background-color: rgb(18, 18, 53);" onclick="toggleSearchBar()">
+        <img src="https://cdn-icons-png.flaticon.com/128/9199/9199686.png" alt="Close Search Icon" class="icon">
+      </button>
     </div>
     <input type="text" class="search-bar" placeholder="Search">
     <nav class="search-menu">
-      <a href="../index.html">Home</a>
+      <a href="../Main_page/index.html">Home</a>
       <a href="../World/world.html">World</a>
       <a href="../Politics/Politics.html">Politics</a>
       <a href="../finance/finance.html">Business</a>
@@ -64,216 +61,138 @@
       <a href="../entertainment/entertainment.html">Entertainment</a>
       <a href="../contact/contact.html">Contact</a>
     </nav>
-</div>
-
-<div class="breaking-news">
-  <div class="news-ticker">
-    <span>🔴 Breaking News: National Herald announces new editorial team! </span>
-    <span>🗞️ Update: Parliament passes new press freedom bill today. </span>
-    <span>📢 Alert: Heavy rains expected in the northern states tomorrow. </span>
-    <span>🗞️ mayank Soni</span>
-    <span>📢 Mukesh soni </span>
-    <span>📢 Radha soni </span>
   </div>
-</div>
+  
+  <div class="breaking-news">
+    <div class="news-ticker">
+  <h>  BREAKING NEWS :</h>
+   
+      <span> Waqf Amendment Bill approved by President Murmu. </span>
+      <span> Smuggler German Singh arrested with weapons and counterfeit currency; ISI connection revealed.
+      </span>
+      <span> PM Modi extends Ram Navami greetings; to visit Tamil Nadu today. </span>
+     
+    </div>
+  </div>
 
- <div class="container">
-          <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  <main>
+    <div class="container-fluid">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://th-i.thgim.com/public/news/national/yentd4/article69373593.ece/alternates/LANDSCAPE_1200/iStock-922066350.jpg" class="d-block w-100" alt="India-China Talks"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>India, China hold diplomatic talks in Beijing</h5>
+              <p>The two countries are preparing for talks between Special Representatives later this year.</p>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://th-i.thgim.com/public/news/national/yentd4/article69373593.ece/alternates/LANDSCAPE_1200/iStock-922066350.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>India, China hold diplomatic talks in Beijing</h5>
-                  <p>The two countries are preparing for talks between Special Representatives later this year.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/4ce7/live/1bddeba0-098e-11f0-97d3-37df2b293ed1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>CIA director denies air strike chat leak was major mistake</h5>
-                  
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://th-i.thgim.com/public/incoming/hne369/article69372942.ece/alternates/LANDSCAPE_1200/2025-03-12T082206Z_883388799_RC2A8DAOLXFO_RTRMADP_3_UKRAINE-CRISIS-USA-RUSSIA.JPG" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Russia says new Black Sea deal is possible with certain conditions</h5>
-                  <p>Russian Foreign Minister Sergei Lavrov said that any new agreement would need to have strict conditions attached to it</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="https://th-i.thgim.com/public/sci-tech/science/okcv20/article69362611.ece/alternates/LANDSCAPE_1200/Profiles1.JPG" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Sunita Williams and Barry Wilmore: Return of the spacewalkers</h5>
-                
-                </div>  
-              </div>
-              <div class="carousel-item">
-                <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/fbe0/live/3307f9e0-07d3-11f0-8aad-d30c42e87de8.jpg.webp" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Israeli air strike kills top Hamas official in Gaza</h5>
-              
-                </div>  
-              </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/4ce7/live/1bddeba0-098e-11f0-97d3-37df2b293ed1.jpg" class="d-block w-100" alt="CIA Director"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>CIA director denies air strike chat leak was major mistake</h5>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+          <div class="carousel-item">
+            <img src="https://th-i.thgim.com/public/incoming/hne369/article69372942.ece/alternates/LANDSCAPE_1200/2025-03-12T082206Z_883388799_RC2A8DAOLXFO_RTRMADP_3_UKRAINE-CRISIS-USA-RUSSIA.JPG" class="d-block w-100" alt="Russia Ukraine"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Russia says new Black Sea deal is possible with certain conditions</h5>
+              <p>Russian Foreign Minister Sergei Lavrov said any new agreement must have strict terms.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://th-i.thgim.com/public/sci-tech/science/okcv20/article69362611.ece/alternates/LANDSCAPE_1200/Profiles1.JPG" class="d-block w-100" alt="Sunita Williams"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Sunita Williams and Barry Wilmore: Return of the spacewalkers</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/fbe0/live/3307f9e0-07d3-11f0-8aad-d30c42e87de8.jpg.webp" class="d-block w-100" alt="Gaza Strike"/>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Israeli air strike kills top Hamas official in Gaza</h5>
+            </div>
           </div>
         </div>
-      <br>
-      <hr >
 
-      <div id="newsContainer" class="card-container"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
 
-      
-      <div id="featuredNewsContainer" class="featured-card-container"></div>
-      
-    
-     <div class="Trending">
-      <a style="font-size:3rem " >Trending</a>
-      
-<div class="card-scroll-container">
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
- 
-    </div>
-  </div>
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     
-    </div>
-  </div>
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-   
-    </div>
-  </div>
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    
-    </div>
-  </div>
+
+
+<hr> <div class="sports_heading"></div>
+    <div class="news-section"><div id="politics-container-1" class="news-grid-1"></div></div>
+
+    <div class="sports_heading"><h1>TOP NEWS</h1></div>
+    <div class="news-section"><div id="politics-container-2" class="news-grid"></div></div>
+
+    <div class="sports_heading"><h1>THIS WEEK IN AUDIO</h1></div>
+    <div class="news-section"><div id="politics-container-3" class="news-grid"></div></div>
+
+    <div class="sports_heading"><h1>STATES UPDATES</h1></div>
+    <div class="news-section"><div id="politics-container-4" class="news-grid"></div></div>
+
+    <div class="sports_heading"><h1>NATURE</h1></div>
+    <div class="news-section"><div id="politics-container-5" class="news-grid"></div></div>
+  </main>
 
   
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h4>About Us</h4>
+      <p>Your trusted source for breaking news, in-depth analysis, and global updates. Stay informed with accurate and timely news coverage.</p>
+    </div>
+    <div class="footer-section social-section">
     
+      <h4>Follow us</h4>
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+      </div>
     </div>
-  </div>
-
-<div class="card" style="width: 16rem;">
-  <a href="#">
-    <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     
+    <div class="footer-section">
+      <h4>Address</h4>
+      <p> 123 Media Street, New Delhi, India</p>
     </div>
-  </div>
-  <div class="card" style="width: 16rem;">
-    <a href="#">
-      <img src="..." class="card-img-top" alt="..."></a>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
+
+    <div class="footer-section">
+      <a href="https://play.google.com/store" target="_blank" class="playstore-link">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+      </a>
+      <a href="https://www.apple.com/in/app-store/" target="_blank" class="playstore-link">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+      </a>
     </div>
-  </div>
- 
-</div>
-<br> 
-<hr>
-     </div>
-
-<br>  <h3>More News ›</h3>
-
-
-<div class="moreNewsContainer"></div>
-<hr>
-
-  <div id="featuredNewsContainer_2" class="featured-2-card-container"></div>
-
-
-
-<script src="javascript.js"></script>
- </body> 
- 
-
- 
- <footer>
-  <div class="footer-container">
-      <div class="footer-section about">
-          <h2>About Us</h2>
-          <p>Your trusted source for breaking news, in-depth analysis, and global updates. Stay informed with accurate and timely news coverage.</p>
-      </div>
-      
-      <div class="footer-section links">
-          <h2>Quick Links</h2>
-          <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">World</a></li>
-              <li><a href="#">Politics</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Entertainment</a></li>
-              <li><a href="#">Contact Us</a></li>
-          </ul>
-      </div>
-
-      <div class="footer-section social">
-          <h2>Follow Us</h2>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a><main></main>
-      </div>
-
-      <div class="footer-section contact">
-          <h2>Contact Us</h2>
-          <p><i class="fas fa-envelope"></i> contact@newswebsite.com</p>
-          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-          <p><i class="fas fa-map-marker-alt"></i> 123 News Street, New York, USA</p>
-      </div>
   </div>
 
   <div class="footer-bottom">
-      <p>&copy; 2024 News Website | All Rights Reserved</p>
+    <p>&copy; 2025 News Website | All Rights Reserved</p>
   </div>
 </footer>
-
+<script src="index.js"></script>
 </html>
 
