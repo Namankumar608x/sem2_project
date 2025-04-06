@@ -7,8 +7,8 @@ async function fetchPoliticsNews() {
         }
         const data = await response.json();
         displayPoliticsNews(data.slice(0, 2), "politics-container-1");
-        displayPoliticsNews(data.slice(2, 8), "politics-container-2");
-        displayPoliticsNews(data.slice(8, 12), "politics-container-3");
+        displayPoliticsNews(data.slice(2, 6), "politics-container-2");
+        displayPoliticsNews(data.slice(6, 12), "politics-container-3");
         displayPoliticsNews(data.slice(12, 16), "politics-container-4");
         displayPoliticsNews(data.slice(16, 20), "politics-container-5");
 
@@ -38,7 +38,23 @@ function displayPoliticsNews(newsArray, containerId) {
         newsContainer.innerHTML += newsCard;
     });
 }
+function distributeNews(newsArray, containerId, columnsCount = 3) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error("Container not found:", containerId);
+        return;
+    }
 
+ 
+    container.innerHTML = "";
+
+    
+    const columns = Array.from({ length: columnsCount }, () => {
+        const col = document.createElement("div");
+        col.classList.add("news-column");
+        container.appendChild(col);
+        return col;
+    });}
 
 document.addEventListener("DOMContentLoaded", fetchPoliticsNews);
 
