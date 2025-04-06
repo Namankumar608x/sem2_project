@@ -14,8 +14,7 @@ async function fetchEntertainmentNews() {
   
   function displayEntertainmentNews(newsArray, containerId) {
     const container = document.getElementById(containerId);
-    if (!container) return; // Safeguard in case a container doesn't exist
-    container.innerHTML = "";
+    if (!container) return; 
   
     newsArray.forEach(news => {
       container.innerHTML += `
