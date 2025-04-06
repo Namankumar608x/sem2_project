@@ -1,4 +1,4 @@
-// Fetch and display Main Page news
+
 async function fetchMainPageNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/main-page");
@@ -7,11 +7,12 @@ async function fetchMainPageNews() {
         }
         const data = await response.json();
 
-        displayMainPageNews(data.slice(0, 2), "main-page-container-1");
-        displayMainPageNews(data.slice(2, 6), "main-page-container-2");
-        displayMainPageNews(data.slice(6, 12), "main-page-container-3");
-        displayMainPageNews(data.slice(12, 16), "main-page-container-4");
-        displayMainPageNews(data.slice(16, 20), "main-page-container-5");
+        displayMainPageNews(data.slice(0, 4), "main-page-container-1");
+        displayMainPageNews(data.slice(4, 8), "main-page-container-2");
+        displayMainPageNews(data.slice(8, 14), "main-page-container-3");
+        displayMainPageNews(data.slice(14, 18), "main-page-container-4");
+        displayMainPageNews(data.slice(18, 22), "main-page-container-5");
+        displayMainPageNews(data.slice(22, 24), "main-page-container-6");
 
     } catch (error) {
         console.error("Error fetching main page news:", error);
@@ -40,7 +41,6 @@ function displayMainPageNews(newsArray, containerId) {
     });
 }
 
-// Optional utility function (unused here but maybe useful later)
 function distributeNews(newsArray, containerId, columnsCount = 3) {
     const container = document.getElementById(containerId);
     if (!container) {
@@ -60,8 +60,6 @@ function distributeNews(newsArray, containerId, columnsCount = 3) {
 
 document.addEventListener("DOMContentLoaded", fetchMainPageNews);
 
-
-// Sidebar and navbar toggles
 function toggleSearchBar() {
     let searchSidebar = document.getElementById("searchSidebar");
     searchSidebar.classList.toggle("open");

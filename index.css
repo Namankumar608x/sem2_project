@@ -262,7 +262,7 @@ body {
   background: linear-gradient( #83051c, #ff1744,rgb(154, 3, 3));
   color: #fff;
   padding: 12px 20px;
-  font-family: 'Montserrat', sans-serif; 
+  font-family:'Times New Roman', Times, serif ;
   font-weight: 700;
   font-size: 1.6rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -278,7 +278,6 @@ body {
     padding-left: 100%;
     animation: scroll-news 25s linear infinite;
   }
- 
   .news-ticker span {
     margin-right: 100px;
   }
@@ -291,12 +290,10 @@ body {
       transform: translateX(-100%);
     }
   }
-
   .carousel-caption{
     color: white !important;
     background-color: #000000;
 }
-
 .carousel {
   position: relative;
   left: 20rem;
@@ -336,7 +333,140 @@ body {
     margin-top: 18vh;
   }
 }
+.news_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  padding: 2rem;
+  max-width: 1800px;
+  gap:7rem;
+  margin: auto;
+}
 
+.news_card {
+  border-bottom: 1px solid #0a0a0a;
+  padding-bottom: 1rem;
+  font-family: 'Georgia', serif;
+}
+
+.news_card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #111;
+
+  font-weight: 600;
+}
+
+.news_card .meta {
+  font-size: 1.3rem;
+  font-family:'Bebas Neue', sans-serif;
+  color: #b10a0a;
+}
+ hr {
+  background-color:  #000000 !important;
+  height: .12rem;
+  opacity:1 !important
+ }
+
+.container_side {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  max-width: 1800px;
+  gap: 5rem;
+  padding: 1rem;
+  border-bottom: .15rem solid black;
+  margin-bottom: 7rem;
+}
+.side_bar {
+ flex: 1 1 20%;
+  display: flex;
+flex-direction: column;
+  gap: 2rem;
+}
+.side_bar_image h5 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.side_bar_image img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.side_bar_image h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.side_bar_image p {
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(183, 9, 9);
+}
+
+.upper_image {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.first_page {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.first_page a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.75rem !important;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.first_page img {
+  width: 180px;
+  height: auto;
+  border-radius: 7%;
+  object-fit: cover;
+}
+
+.first_page p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .container_side {
+    flex-direction: column;
+  }
+
+  .side_bar,
+  .upper_image {
+    flex: 1 1 100%;
+  }
+
+  .first_page {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .first_page img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .sports_heading h1 {
   display: flex;
   justify-content: center;
@@ -347,7 +477,6 @@ body {
   font-weight: 500;
   border-bottom: #000000 solid .2rem;
 }
-
 .news-section {
   width: 100%;
   padding: 1rem;
@@ -358,13 +487,6 @@ body {
   justify-content: center;
   gap: 2rem;
 }
-.news-grid-1{
-  display: flex;
-  gap: 8rem;
-  margin-left: 20rem;
-margin-right: 20rem;
-}
-
 .footer {
   background-color: #0d0d0d;
   color: #ffffff;
