@@ -1,5 +1,6 @@
 import mongoose from "mongoose"; // ✅ Add this line
 const technologyNewsSchema = new mongoose.Schema({
+    _id: { type: Number, required: true },
     title: { type: String, required: true },
     content: { type: String, required: true },
     category: { type: String, default: "Technology" },

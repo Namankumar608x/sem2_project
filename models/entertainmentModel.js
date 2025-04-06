@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const entertainmentNewsSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
   title: { type: String, required: true },
   content: { type: String, required: true },
   category: { type: String, default: "entertainment" },

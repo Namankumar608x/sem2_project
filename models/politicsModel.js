@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 // Define the schema for politics news
 const politicsNewsSchema = new mongoose.Schema({
+  _id: { type: Number, required: true },
   title: { type: String, required: true },
   content: { type: String, required: true },
   category: { type: String, default: "politics" },
