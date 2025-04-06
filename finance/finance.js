@@ -31,6 +31,7 @@ function displayFinanceNews(newsArray, containerId) {
                         <p class="card-text">${news.content.substring(0, 150)}...</p>
                         <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
                         <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
+                         <a href="../article.html?category=finance&id=${news._id}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
