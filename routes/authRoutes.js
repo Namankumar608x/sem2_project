@@ -7,9 +7,9 @@ const router = express.Router();
  * 🟢 Register User
  */
 router.post("/register", async (req, res) => {
-  const { email, password, confirmPassword } = req.body;
+  const { username, email, password, confirmPassword } = req.body;
 
-  if (!email || !password || !confirmPassword) {
+  if (!username || !email || !password || !confirmPassword) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
@@ -18,12 +18,14 @@ router.post("/register", async (req, res) => {
   }
 
   try {
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+
     if (existingUser) {
       return res.status(409).json({ message: "User already exists." });
     }
 
-    const newUser = new User({ email, password });
+    const newUser = new User({ username, email, password });
+
     await newUser.save();
     res.status(201).json({ message: "Registration successful." });
   } catch (error) {
@@ -33,7 +35,7 @@ router.post("/register", async (req, res) => {
 });
 
 /**
- * 🔵 Login User
+ * 🔵 Login User (by email)
  */
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -44,6 +46,7 @@ router.post("/login", async (req, res) => {
 
   try {
     const user = await User.findOne({ email });
+
     if (!user || !(await user.comparePassword(password))) {
       return res.status(401).json({ message: "Invalid credentials." });
     }

@@ -25,7 +25,7 @@
 <body>
   <div class="contact-container">
     <img src="./logo.png" alt="National Herald Logo" />
-    <h2>Sign in for a National Herald Account</h2>
+    <h2>Sign in to your National Herald Account</h2>
 
     <form class="emailform">
       <input type="email" class="form-control" id="email" placeholder="Email" required />
@@ -39,7 +39,7 @@
     </form>
 
     <p class="mt-3">
-      <a href="../login/login.html" class="sign_in">Register</a>
+      Don't have an account? <a href="../login/login.html" class="sign_in">Register here</a>
     </p>
 
     <div class="social-media">
@@ -56,7 +56,7 @@
   </div>
 
   <script>
-
+    // Toggle Password Visibility
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
@@ -68,33 +68,40 @@
         : '<i class="fas fa-eye-slash"></i>';
     });
 
-    // 🚀 Submit Login Form
+    // Submit Login Form
     document.querySelector(".emailform").addEventListener("submit", async function (e) {
-      e.preventDefault();
+  e.preventDefault();
 
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-      try {
-        const res = await fetch("http://localhost:8080/api/v1/auth/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        });
+  // 🔒 Basic validation before sending to backend
+  if (!email || !password) {
+    alert("All fields are required.");
+    return;
+  }
 
-        const data = await res.json();
-
-        if (res.status === 200) {
-          alert("Login successful!");
-          window.location.href = "../index.html"; // ✅ Redirect to homepage
-        } else {
-          alert(data.message || "Login failed.");
-        }
-      } catch (err) {
-        alert("Error connecting to server.");
-        console.error(err);
-      }
+  try {
+    const res = await fetch("http://localhost:8080/api/v1/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
     });
+
+    const data = await res.json();
+
+    if (res.status === 200) {
+      alert("Login successful!");
+      window.location.href = "../index.html";
+    } else {
+      alert(data.message || "Login failed.");
+    }
+  } catch (err) {
+    alert("Error connecting to server.");
+    console.error(err);
+  }
+});
+
   </script>
 </body>
 </html>
