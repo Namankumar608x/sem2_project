@@ -10,6 +10,7 @@ async function fetchSportsNews() {
         displaySportsNews(data.slice(8, 12), "sports-container-3");
         displaySportsNews(data.slice(12, 16), "sports-container-4");
         displaySportsNews(data.slice(16, 20), "sports-container-5");
+        displaySportsNews(data.slice(20, 24), "sports-container-6");
     } catch (error) {
         console.error("Error fetching sports news:", error);
     }

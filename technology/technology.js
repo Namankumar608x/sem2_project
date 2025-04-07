@@ -7,6 +7,7 @@ async function fetchTechnologyNews() {
       displayTechnologyNews(data.slice(8, 12), "tech-container-3");
       displayTechnologyNews(data.slice(12, 16), "tech-container-4");
       displayTechnologyNews(data.slice(16, 20), "tech-container-5");
+      displayTechnologyNews(data.slice(20, 24), "tech-container-6");
     } catch (error) {
       console.error("Error fetching technology news:", error);
     }

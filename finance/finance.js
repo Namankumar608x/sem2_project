@@ -7,11 +7,12 @@ async function fetchFinanceNews() {
         const data = await response.json();
 
         // Distribute into five sections
-        displayFinanceNews(data.slice(0, 4), "finance-container-1");  // Economy
-        displayFinanceNews(data.slice(4, 8), "finance-container-2");  // Markets
-        displayFinanceNews(data.slice(8, 12), "finance-container-3"); // Startups
-        displayFinanceNews(data.slice(12, 16), "finance-container-4"); // Banking
-        displayFinanceNews(data.slice(16, 20), "finance-container-5"); // Companies
+        displayFinanceNews(data.slice(0, 4), "finance-container-1");  
+        displayFinanceNews(data.slice(4, 8), "finance-container-2");  
+        displayFinanceNews(data.slice(8, 12), "finance-container-3"); 
+        displayFinanceNews(data.slice(12, 16), "finance-container-4"); 
+        displayFinanceNews(data.slice(16, 20), "finance-container-5"); 
+        displayFinanceNews(data.slice(20, 24), "finance-container-6");
     } catch (error) {
         console.error("Error fetching finance news:", error);
     }

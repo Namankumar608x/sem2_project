@@ -8,13 +8,14 @@ async function fetchWorldNews() {
         console.log("Fetched World News:", data); // Debugging line to check data
 
         // Ensure there are enough articles before slicing
-        const newsChunks = [0, 4, 8, 12, 16].map(start => data.slice(start, start + 4));
+        const newsChunks = [0, 4, 8, 12, 16,20].map(start => data.slice(start, start + 4));
 
         displayWorldNews(newsChunks[0], "sports-container-1");
         displayWorldNews(newsChunks[1], "sports-container-2");
         displayWorldNews(newsChunks[2], "sports-container-3");
         displayWorldNews(newsChunks[3], "sports-container-4");
         displayWorldNews(newsChunks[4], "sports-container-5");
+        displayWorldNews(newsChunks[5], "sports-container-6");
     } catch (error) {
         console.error("Error fetching world news:", error);
     }
