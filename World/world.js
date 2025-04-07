@@ -36,22 +36,9 @@ function displayWorldNews(newsArray, containerId) {
                     <img src="${news.image}" class="card-img-top" alt="${news.title}" />
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                        
+
                         <p class="text-muted"><strong>Date:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-                    
                 </a>
-=======
-=======
->>>>>>> Stashed changes
-                        <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-                        <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
-                   <a href="../article.html?category=world&id=${news._id}" class="btn btn-primary">Read More</a>
->>>>>>> Stashed changes
-
-
-
                     </div>
                 </div>
             </div>
@@ -62,7 +49,7 @@ function displayWorldNews(newsArray, containerId) {
 
 document.addEventListener("DOMContentLoaded", fetchWorldNews);
 
-//add
+
 
 function toggleSearchBar() {
     let searchSidebar = document.getElementById("searchSidebar");
