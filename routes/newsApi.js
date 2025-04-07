@@ -30,18 +30,7 @@ router.get("/sports", async (req, res) => {
   }
 });
 
-/** 
- * 📌 Render Sports News (EJS Page)
- */
-router.get("/sports-page", async (req, res) => {
-  try {
-    const sportsNews = await Sports.find({ category: "Sports" }).sort({ _id: 1 });
-    res.render("sports", { news: sportsNews });
-  } catch (error) {
-    console.error("Error rendering sports page:", error);
-    res.status(500).send("Error rendering sports page.");
-  }
-});
+
 
 /** 
  * 📌 Fetch Technology News
