@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -8,10 +7,9 @@
 }
 
 body {
-  background: #000000;
+  background: #000;
   overflow-x: hidden;
 }
-
 .top-bar {
   position: fixed;
   top: 0;
@@ -26,27 +24,45 @@ body {
   z-index: 1100;
   height: 8vh;
   transition: height 0.3s ease-in-out;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* adjust spacing between logo/search/menu */
 }
 
 .logo {
-  text-align: center;
-  flex: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.logo p {
+  color: rgb(188, 188, 188);
+  font-size: 2.3rem;
+  margin: 0;
 }
 
 .logo-img {
   max-width: 100%;
   height: auto;
-  transition: width 0.3s ease-in-out;
   max-height: 4vh;
+  transition: width 0.3s ease-in-out;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .navbar {
-  margin-top: 0 !important;
-  top: 0 !important;
   position: fixed !important;
+  top: 8vh;
   left: 0;
   width: 100%;
   border-bottom: 2px solid #40aae3;
@@ -65,7 +81,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   margin: 0 3rem;
   font-size: 20px;
   font-weight: 500;
@@ -74,46 +90,8 @@ body {
 
 .navbar a:hover {
   color: #0a0a30;
-  background: #ffffff;
+  background: #fff;
   border-radius: 3px;
-}
-
-@media (max-width: 768px) {
-  .logo-img {
-    max-width: 80%;
-    height: auto;
-    max-height: 5vh;
-  }
-
-  .navbar {
-    justify-content: flex-start;
-    padding: 10px 20px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    flex-direction: column;
-    display: none;
-    background: black;
-    top: 8vh;
-  }
-
-  .navbar.open {
-    display: flex;
-  }
-
-  .auth-buttons {
-    display: none;
-  }
-
-  .top-bar {
-    height: auto;
-    padding: 10px;
-  }
-
-  .logo {
-    flex: none;
-    margin-bottom: 10px;
-  }
 }
 
 .hamburger {
@@ -126,47 +104,16 @@ body {
   align-items: center;
   background: transparent;
   border: none;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }
 
 .hamburger div {
   width: 30px;
   height: 4px;
-  background: white;
+  background: #fff;
   transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-}
-
-.main-content {
-  padding-top: 16vh;
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    padding-top: 18vh;
-  }
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  color: white;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  border-style: none;
-}
-
-.search-icon img {
-  height: 2rem;
-  margin-right: 1.5rem;
 }
 
 .auth-buttons {
@@ -178,14 +125,14 @@ body {
 .auth-buttons .login-btn {
   font-size: 1.2rem;
   font-weight: 600;
-  background-color: #ffffff;
-  border: .2rem solid black;
+  background: #fff;
+  border: .2rem solid #000;
 }
 
 .auth-buttons .register-btn:hover,
 .auth-buttons .login-btn:hover {
+  background: #f2f2f2;
   opacity: 0.8;
-  background-color: #f2f2f2;
 }
 
 .btn {
@@ -197,17 +144,35 @@ body {
 }
 
 .register-btn {
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border: none;
+}
+
+.search-icon img {
+  height: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .search-sidebar {
   position: fixed;
-  top: calc(12vh);
+  top: 12vh;
   left: -350px;
   width: 350px;
-  height: calc(100% - (5vh + 50px));
-  background: black;
+  height: calc(100% - 5vh - 50px);
+  background: #000;
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -222,12 +187,11 @@ body {
 
 .search-sidebar .search-bar {
   border-radius: 1rem;
-  border-width: 0.2rem;
+  border: 0.2rem solid #000;
   height: 4rem;
   padding-left: 2rem;
-  color: #000000;
-  border-color: #000000;
   margin-top: 2rem;
+  color: #000;
 }
 
 .search-sidebar .search-menu {
@@ -239,7 +203,7 @@ body {
 
 .search-sidebar .search-menu a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
   font-size: larger;
 }
@@ -254,13 +218,20 @@ body {
   filter: brightness(0) invert(1);
 }
 
+hr {
+  border: 0.05rem dotted #000 !important;
+  opacity: 1 !important;
+}
+
+
 .breaking-news {
-  margin-top: 12vh;
+  margin-top:12vh;
+  height:5vh;
   width: 100%;
   overflow: hidden;
   background: linear-gradient(#83051c, #ff1744, rgb(154, 3, 3));
   color: #fff;
-  padding: 12px 20px;
+
   font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   font-size: 1.6rem;
