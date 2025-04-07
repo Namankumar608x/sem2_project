@@ -1,3 +1,8 @@
+function openart(id) {
+ 
+    window.location.href = `./article.html?category=world&id=${id}`;
+}
+
 
 async function fetchMainPageNews() {
     try {
