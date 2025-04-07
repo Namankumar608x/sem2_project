@@ -7,6 +7,7 @@ async function fetchEntertainmentNews() {
       displayEntertainmentNews(data.slice(8, 12), "entertainment-container-3");
       displayEntertainmentNews(data.slice(12, 16), "entertainment-container-4");
       displayEntertainmentNews(data.slice(16, 20), "entertainment-container-5");
+      displayEntertainmentNews(data.slice(20, 24), "entertainment-container-6");
     } catch (error) {
       console.error("Error fetching entertainment news:", error);
     }

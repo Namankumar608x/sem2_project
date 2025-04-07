@@ -11,6 +11,7 @@ async function fetchPoliticsNews() {
         displayPoliticsNews(data.slice(8, 12), "politics-container-3");
         displayPoliticsNews(data.slice(12, 16), "politics-container-4");
         displayPoliticsNews(data.slice(16, 20), "politics-container-5");
+        displayPoliticsNews(data.slice(20, 24), "politics-container-6");
 
     } catch (error) {
         console.error("Error fetching politics news:", error);

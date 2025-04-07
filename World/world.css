@@ -483,3 +483,74 @@ hr {
     width: 80%;
   }
 }
+#sports-container-6.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left = 1 part, Right = 2 parts */
+  gap: 20px;
+  margin: 20px;
+  align-items: start;
+}
+
+/* All column containers */
+#sports-container-6 .col {
+  margin-bottom: 20px;
+}
+
+/* First 3 items: small cards stacked vertically */
+#sports-container-6 .col:nth-child(-n+3) {
+  display: flex;
+}
+
+/* Small horizontal card layout */
+#sports-container-6 .col:nth-child(-n+3) .card {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#sports-container-6 .col:nth-child(-n+3) .card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+/* Text for small cards */
+#sports-container-6 .col:nth-child(-n+3) .card-body {
+  padding: 8px 10px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* The 4th item: big feature card */
+#sports-container-6 .col:nth-child(4) {
+  grid-column: 2 / 3;
+  grid-row: 1 / span 3; /* Spans all 3 rows vertically */
+}
+
+/* Style the big card */
+#sports-container-6 .col:nth-child(4) .card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#sports-container-6 .col:nth-child(4) .card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#sports-container-6 .col:nth-child(4) .card-body {
+  padding: 12px 15px;
+  font-size: 15px;
+}
