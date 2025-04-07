@@ -9,7 +9,7 @@ async function fetchWorldNews() {
             throw new Error("Failed to fetch world news.");
         }
         const data = await response.json();
-        console.log("Fetched World News:", data); // Debugging line to check data
+        console.log("Fetched World News:", data); 
 
         // Ensure there are enough articles before slicing
         const newsChunks = [0, 4, 8, 12, 16,20].map(start => data.slice(start, start + 4));
