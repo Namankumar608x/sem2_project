@@ -185,6 +185,7 @@ body {
 
 .auth-buttons .register-btn:hover,
 .auth-buttons .login-btn:hover {
+  background-color: #f2f2f2;
   opacity: 0.8;
 }
 

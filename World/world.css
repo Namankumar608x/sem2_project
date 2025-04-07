@@ -185,6 +185,7 @@ body {
 
 .auth-buttons .register-btn:hover,
 .auth-buttons .login-btn:hover {
+  background-color: #f2f2f2;
   opacity: 0.8;
 }
 
@@ -283,31 +284,34 @@ hr {
   font-weight: 500;
   border-bottom: #000000 solid .2rem;
 }
-
-.news-section {
-  background:linear-gradient(rgb(15, 43, 72),rgb(12, 153, 137),rgb(193, 235, 237));
-}
-
 .news-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
-.card h-100 shadow-sm{
- 
-}
 .card-body{
-  background-color: #58e4e6;
-  background: rgb(103, 8, 8);
+  font-size:1.4rem;
+font-family: 'Bebas Neue', sans-serif;
+  background: rgb(246, 246, 246);
+  margin-bottom: 4rem;
+}
+.text-muted{
+  margin-top: 7rem;
+ font-weight: 600;
 }
 .card-img-top{
-  height:10%;
+  height:100%;
+}
+.card-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+
 }
 .news-card {
   width: 22%;
   min-width: 250px;
-  background: rgb(103, 8, 8);
+  background: rgb(232, 232, 232);
   border-radius: 1rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
@@ -319,6 +323,9 @@ hr {
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+.card h-100 shadow-sm{
+  background-color: #0d0d0d;
 }
 
 .container_side {
@@ -497,75 +504,4 @@ hr {
   .news-card {
     width: 80%;
   }
-}
-#sports-container-6.news-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Left = 1 part, Right = 2 parts */
-  gap: 20px;
-  margin: 20px;
-  align-items: start;
-}
-
-/* All column containers */
-#sports-container-6 .col {
-  margin-bottom: 20px;
-}
-
-/* First 3 items: small cards stacked vertically */
-#sports-container-6 .col:nth-child(-n+3) {
-  display: flex;
-}
-
-/* Small horizontal card layout */
-#sports-container-6 .col:nth-child(-n+3) .card {
-  display: flex;
-  flex-direction: row;
-  height: 100px;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-#sports-container-6 .col:nth-child(-n+3) .card img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-/* Text for small cards */
-#sports-container-6 .col:nth-child(-n+3) .card-body {
-  padding: 8px 10px;
-  font-size: 13px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* The 4th item: big feature card */
-#sports-container-6 .col:nth-child(4) {
-  grid-column: 2 / 3;
-  grid-row: 1 / span 3; /* Spans all 3 rows vertically */
-}
-
-/* Style the big card */
-#sports-container-6 .col:nth-child(4) .card {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-#sports-container-6 .col:nth-child(4) .card img {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-}
-
-#sports-container-6 .col:nth-child(4) .card-body {
-  padding: 12px 15px;
-  font-size: 15px;
 }

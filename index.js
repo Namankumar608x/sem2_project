@@ -27,13 +27,14 @@ function displayMainPageNews(newsArray, containerId) {
         const newsCard = `
             <div class="col">
                 <div class="card h-100 shadow-sm">
+                 <a href="./article.html?category=main-page&id=${news._id}" style=color:black;text-decoration:none;">
                     <img src="${news.image}" class="card-img-top" alt="${news.title}" />
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
-                        <p class="card-text">${news.content.substring(0, 150)}...</p>
+                      
                         <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-                        <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
-                         <a href="./article.html?category=main-page&id=${news._id}" class="btn btn-primary">Read More</a>
+                       
+                       </a>
 
                     </div>
                 </div>
