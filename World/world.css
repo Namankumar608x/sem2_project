@@ -284,33 +284,70 @@ hr {
   border-bottom: #000000 solid .2rem;
 }
 
+.news-section {
+  background:linear-gradient(rgb(15, 43, 72),rgb(12, 153, 137),rgb(193, 235, 237));
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.card h-100 shadow-sm{
+ 
+}
+.card-body{
+  background-color: #58e4e6;
+  background: rgb(103, 8, 8);
+}
+.card-img-top{
+  height:10%;
+}
+.news-card {
+  width: 22%;
+  min-width: 250px;
+  background: rgb(103, 8, 8);
+  border-radius: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.news-card img{
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
 .container_side {
   display:flex;
   justify-content: space-evenly;
   gap: 1rem;
   padding: 1rem;
-  max-width: 2000px;
+  max-width: 1800px;
   margin: auto;
 }
 
 .side_bar {
-  width: 40%;
+  width: 30%;
   min-width: 280px;
   padding: 1rem;
 }
 
 .side_bar h5 {
-  margin-bottom: .5rem;
-  font-weight: 700;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .side_bar h6{
-  margin-top: .25rem;
+  margin-top: 1rem;
 }
 
 .side_bar p,
 .side_image p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Bebas Neue', sans-serif;
   color: rgb(183, 9, 9);
 }
@@ -318,7 +355,7 @@ hr {
 .side_image {
   color: #04151f;
   margin-left: 6rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
   flex-grow: 1;
   padding: 1rem;
 }
@@ -330,7 +367,7 @@ hr {
 
 .side_image h3{
   margin-top: 2rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
@@ -341,45 +378,23 @@ hr {
 
 .side_image img {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   display: block;
   margin: 0 auto;
 }
 
 .side_bar_image {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .side_bar_image img {
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   height: auto;
   object-fit: cover;
 }
 
-
-.news-section {
-  width: 100%;
-  padding: 1rem;
-}
-
-.news-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.news-card {
-  width: 22%;
-  min-width: 250px;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.3s ease-in-out;
-}
 
 .footer {
   background-color: #0d0d0d;

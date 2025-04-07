@@ -32,7 +32,7 @@ function displayWorldNews(newsArray, containerId) {
         const newsCard = `
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                 <a href="../article.html?category=world&id=${news._id}"  style="text-decoration: none; color: black;">
+                 <a href="../article.html?category=world&id=${news._id}"  style="text-decoration: none; color: black; height:50%;">
                     <img src="${news.image}" class="card-img-top" alt="${news.title}" />
                     <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
