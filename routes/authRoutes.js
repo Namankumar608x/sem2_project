@@ -25,9 +25,11 @@ router.post("/register", async (req, res) => {
     }
 
     const newUser = new User({ username, email, password });
-
     await newUser.save();
-    res.status(201).json({ message: "Registration successful." });
+
+    // ✅ Include username in response
+    res.status(200).json({ message: "Registration successful", username: newUser.username });
+
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({ message: "Server error during registration." });
@@ -51,7 +53,9 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    res.status(200).json({ message: "Login successful." });
+    // ✅ Include username in response for frontend
+    res.status(200).json({ message: "Login successful", username: user.username });
+
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Server error during login." });

@@ -91,9 +91,13 @@
     const data = await res.json();
 
     if (res.status === 200) {
-      alert("Login successful!");
-      window.location.href = "../index.html";
-    } else {
+      console.log("Server response:", data); // Optional for debugging
+localStorage.setItem("user", JSON.stringify({ username: data.username }));
+
+
+  window.location.href = "../index.html";
+}
+ else {
       alert(data.message || "Login failed.");
     }
   } catch (err) {
