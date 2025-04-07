@@ -28,9 +28,14 @@ async function fetchTechnologyNews() {
             <img src="${news.image}" class="card-img-top" alt="${news.title}" />
             <div class="card-body">
               <h5 class="card-title">${news.title}</h5>
-              <p class="card-text">${news.content.substring(0, 150)}...</p>
-              <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-              <p class="text-muted"><strong>Tags:</strong> ${news.tags.join(", ")}</p>
+            
+            
+              <p class="text-muted">${new Date(news.date_published).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+}).replace(/ /g, '-')}</p>
+
               </a>
             </div>
           </div>
