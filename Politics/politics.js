@@ -1,4 +1,7 @@
-
+function openart(id) {
+ 
+    window.location.href = `../article.html?category=politics&id=${id}`;
+  }
 async function fetchPoliticsNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/politics");

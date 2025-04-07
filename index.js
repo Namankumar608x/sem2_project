@@ -1,6 +1,6 @@
 function openart(id) {
  
-    window.location.href = `./article.html?category=world&id=${id}`;
+    window.location.href = `./article.html?category=main-page&id=${id}`;
 }
 
 
@@ -17,7 +17,7 @@ async function fetchMainPageNews() {
         displayMainPageNews(data.slice(8, 14), "main-page-container-3");
         displayMainPageNews(data.slice(14, 18), "main-page-container-4");
         displayMainPageNews(data.slice(18, 22), "main-page-container-5");
-        displayMainPageNews(data.slice(22, 24), "main-page-container-6");
+        displayMainPageNews(data.slice(22, 26), "main-page-container-6");
 
     } catch (error) {
         console.error("Error fetching main page news:", error);

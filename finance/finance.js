@@ -1,4 +1,8 @@
-async function fetchFinanceNews() {
+function openart(id) {
+ 
+    window.location.href = `../article.html?category=finance&id=${id}`;
+  }
+  async function fetchFinanceNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/finance");
         if (!response.ok) {

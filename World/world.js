@@ -1,3 +1,7 @@
+function openart(id) {
+ 
+    window.location.href = `../article.html?category=World&id=${id}`;
+}
 async function fetchWorldNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/world");

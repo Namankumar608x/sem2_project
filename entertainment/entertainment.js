@@ -1,3 +1,7 @@
+function openart(id) {
+ 
+  window.location.href = `../article.html?category=entertainment&id=${id}`;
+}
 async function fetchEntertainmentNews() {
     try {
       const response = await fetch("http://localhost:8080/api/v1/news/entertainment");

@@ -1,3 +1,7 @@
+function openart(id) {
+ 
+  window.location.href = `../article.html?category=Technology&id=${id}`;
+}
 async function fetchTechnologyNews() {
     try {
       const response = await fetch("http://localhost:8080/api/v1/news/technology");

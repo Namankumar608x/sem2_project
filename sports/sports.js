@@ -1,4 +1,8 @@
-async function fetchSportsNews() {
+function openart(id) {
+ 
+    window.location.href = `../article.html?category=Sports&id=${id}`;
+  }
+  async function fetchSportsNews() {
     try {
         const response = await fetch("http://localhost:8080/api/v1/news/sports");
         if (!response.ok) {
