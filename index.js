@@ -34,8 +34,11 @@ function openart(id) {
               <img src="${news.image}" class="card-img-top" alt="${news.title}" />
               <div class="card-body">
                 <h5 class="card-title">${news.title}</h5>
-                <p class="text-muted"><strong>Published on:</strong> ${new Date(news.date_published).toLocaleDateString()}</p>
-              </div>
+                  <p class="text-muted">${new Date(news.date_published).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                }).replace(/ /g, '-')}</p>
             </a>
           </div>
         </div>
@@ -81,7 +84,7 @@ function openart(id) {
       navLinks.classList.toggle('active');
     });
   
-    // Handle auth/profile display
+
     const user = JSON.parse(localStorage.getItem("user"));
     const authButtonsDiv = document.getElementById("authButtons");
   
