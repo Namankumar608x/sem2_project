@@ -6,7 +6,11 @@ import PoliticsNews from "../models/politicsModel.js";
 import FinanceNews from "../models/financeModel.js";
 import EntertainmentNews from "../models/entertainmentModel.js"; 
 import MainPageNews from "../models/mainPageModel.js";
-// ✅ Correct model name
+import ContactMessage from "../models/contactModel.js"; 
+import User from "../models/userModel.js"; 
+
+
+
 
 const router = express.Router();
 
@@ -155,6 +159,32 @@ router.get("/article/:category/:id", async (req, res) => {
 });
 
 
+// 📩 Contact Form Submission
+// 📩 Contact Form Submission - With Registered Email Check
+router.post("/contact", async (req, res) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
+
+  try {
+    // ✅ Check if email is registered
+    const userExists = await User.findOne({ email });
+    if (!userExists) {
+      return res.status(401).json({ message: "Please use a registered email address." });
+    }
+
+    // ✅ Save the contact message
+    const newMsg = new ContactMessage({ name, email, message });
+    await newMsg.save();
+
+    res.status(201).json({ message: "Message received successfully!" });
+  } catch (err) {
+    console.error("Error saving contact message:", err);
+    res.status(500).json({ message: "Something went wrong." });
+  }
+});
 
 
 export default router;
