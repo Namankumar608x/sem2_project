@@ -99,9 +99,12 @@
         const data = await res.json();
 
         if (res.status === 201) {
-          alert("Registration successful!");
-          window.location.href = "../index.html";
-        } else {
+  alert("Registration successful!");
+  window.location.replace("http://127.0.0.1:5500/sem2_project/index.html");
+
+        }
+
+        else {
           alert(data.message || "Registration failed.");
         }
       } catch (err) {
